@@ -267,6 +267,13 @@ const OFFERS = [
   { name: "Deep cleaning with materials", price: "75", unit: "HUR" }
 ];
 
+// Services listed in structured data for topical coverage (no fixed price).
+const SERVICE_TYPES = [
+  "Home cleaning", "Office and commercial cleaning", "Deep cleaning",
+  "Move-in and move-out cleaning", "Post-construction turnover for villas and commercial buildings",
+  "Airbnb and holiday home cleaning", "Carpet cleaning", "Laundry and ironing"
+];
+
 function injectJsonLd() {
   const el = document.getElementById("ld-json");
   if (!el) return;
@@ -277,12 +284,19 @@ function injectJsonLd() {
     "additionalType": "https://www.productontology.org/id/Cleaner",
     "@id": id,
     "name": CONFIG.name,
+    "description": "Licensed cleaning company in Dubai and Sharjah offering home, office, deep, move-in and move-out, Airbnb turnover, and post-construction cleaning, with free on-site supervision on every job.",
     "image": CONFIG.domain + "/assets/og-cover.jpg",
     "logo": CONFIG.domain + "/assets/icon-512.png",
     "url": CONFIG.domain + "/",
     "telephone": CONFIG.phonePrimary,
     "email": CONFIG.email,
+    "knowsAbout": [
+      "House cleaning", "Office cleaning", "Deep cleaning", "Move-in and move-out cleaning",
+      "Post-construction cleaning", "Villa cleaning", "Airbnb and holiday home cleaning",
+      "Carpet cleaning", "Commercial cleaning"
+    ],
     "priceRange": CONFIG.priceRange,
+    "paymentAccepted": "Cash, Bank transfer",
     "currenciesAccepted": "AED",
     "foundingDate": CONFIG.established,
     "parentOrganization": { "@type": "Organization", "name": CONFIG.legalEntity },
@@ -298,8 +312,13 @@ function injectJsonLd() {
     "hasMap": CONFIG.maps,
     "areaServed": [
       { "@type": "City", "name": "Dubai" },
-      { "@type": "City", "name": "Sharjah" }
+      { "@type": "City", "name": "Sharjah" },
+      { "@type": "Country", "name": "United Arab Emirates" }
     ],
+    "makesOffer": SERVICE_TYPES.map((s) => ({
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": s, "areaServed": "Dubai and Sharjah, UAE" }
+    })),
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": CONFIG.openDays.map((d) => "https://schema.org/" + d),
