@@ -1,4 +1,4 @@
 ﻿User-agent: *
 Allow: /
 
-Sitemap: https://bee-thrive-website.vercel.app/sitemap.xml
+Sitemap: https://beethrivecleaning.vercel.app/sitemap.xml
