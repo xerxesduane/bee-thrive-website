@@ -1,0 +1,17 @@
+{
+  "name": "Bee Thrive Cleaning Services",
+  "short_name": "Bee Thrive",
+  "description": "Licensed Dubai cleaning company. Home, office, deep, and move-in cleaning with free on-site supervision.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FDF6E9",
+  "theme_color": "#F4A300",
+  "lang": "en",
+  "categories": ["business", "lifestyle", "utilities"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

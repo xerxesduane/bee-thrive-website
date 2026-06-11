@@ -1,0 +1,5 @@
+screenshots/
+.netlify/
+.vercel/
+Thumbs.db
+.DS_Store
