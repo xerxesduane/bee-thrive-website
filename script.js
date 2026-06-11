@@ -22,7 +22,7 @@ const CONFIG = {
   maps: "https://maps.app.goo.gl/FFoZoKx1cviyXeTg7",
 
   // Site
-  domain: "https://bee-thrive-cleaning-dubai.netlify.app",
+  domain: "https://bee-thrive-website.vercel.app",
   priceRange: "AED 35 to AED 75 per hour",
   // Days the business is open. Update closedDay if a different rest day applies.
   openDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"],
