@@ -10,9 +10,9 @@ const CONFIG = {
   established: "2024-10",
 
   // Contact
-  phonePrimary: "+971 56 509 1801",
-  phoneSecondary: "+971 56 509 1795",
-  whatsapp: "971565091801",            // digits only, used in wa.me links
+  phonePrimary: "+971 56 846 2872",    // main line: WhatsApp + inquiry calls
+  phoneSecondary: "+971 56 509 1801",
+  whatsapp: "971568462872",            // digits only, used in wa.me links
   email: "digitalthrivefm@gmail.com",
   address: "Office #201, Al Qasimi Building, Salahuddin Street, Deira, Dubai, UAE",
 
