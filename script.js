@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Bee Thrive Cleaning Services
    All editable business details live in CONFIG below.
    Change a value here and it updates every link on the page.
@@ -22,7 +22,7 @@ const CONFIG = {
   maps: "https://maps.app.goo.gl/FFoZoKx1cviyXeTg7",
 
   // Site
-  domain: "https://beethrivecleaning.vercel.app",
+  domain: "https://bee-thrive-cleaning.vercel.app",
   priceRange: "AED 35 to AED 75 per hour",
   // Days the business is open. Update closedDay if a different rest day applies.
   openDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"],

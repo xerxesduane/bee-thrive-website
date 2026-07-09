@@ -10,3 +10,4 @@ assets/showreel.mp4
 assets/showreel-poster.jpg
 
 .vercel
+.env*
