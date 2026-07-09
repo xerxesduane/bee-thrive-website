@@ -4,4 +4,9 @@ screenshots/
 Thumbs.db
 .DS_Store
 
+# Raw source uploads. The site uses optimized showreel-* assets instead.
+assets/Facebook*.mp4
+assets/showreel.mp4
+assets/showreel-poster.jpg
+
 .vercel

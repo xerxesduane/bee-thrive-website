@@ -158,7 +158,7 @@ function initFaq() {
 /* ---------- Scroll reveal ---------- */
 function initReveal() {
   const targets = document.querySelectorAll(
-    ".section-head, .empathy, .svc-group-head, .svc-card, .value-card, .why-list li, .why-gallery, .step, .price-table-wrap, .promise, .review-card, .clients-subhead, .client-card, .area-chips, .booking-form, .contact-info-col, .faq-item, .trust-item, .final-cta-inner"
+    ".section-head, .empathy, .svc-group-head, .svc-card, .value-card, .why-list li, .why-gallery, .step, .reel-copy, .reel-card, .reel-mini, .price-table-wrap, .promise, .review-card, .clients-subhead, .client-card, .area-chips, .booking-form, .contact-info-col, .faq-item, .trust-item, .final-cta-inner"
   );
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   // ?allvisible shows every section immediately (used for full-page screenshots and
@@ -360,6 +360,25 @@ function injectJsonLd() {
   }).filter((e) => e.name && e.acceptedAnswer.text);
 
   const graph = { "@context": "https://schema.org", "@graph": [business] };
+  graph["@graph"].push({
+    "@type": "VideoObject",
+    "@id": CONFIG.domain + "/#showreel-video",
+    "name": "Bee Thrive Cleaning Services showreel",
+    "description": "A short Bee Thrive services reel showing supervised cleaning work for homes, offices, holiday homes, and projects across Dubai and Sharjah.",
+    "thumbnailUrl": CONFIG.domain + "/assets/showreel-main-poster.jpg",
+    "contentUrl": CONFIG.domain + "/assets/showreel-main.mp4",
+    "embedUrl": CONFIG.domain + "/#showreel",
+    "uploadDate": "2026-07-10",
+    "duration": "PT30S",
+    "publisher": {
+      "@type": "Organization",
+      "name": CONFIG.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": CONFIG.domain + "/assets/icon-512.png"
+      }
+    }
+  });
   if (faqEntities.length) {
     graph["@graph"].push({ "@type": "FAQPage", "@id": CONFIG.domain + "/#faq", "mainEntity": faqEntities });
   }
