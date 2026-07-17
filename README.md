@@ -100,7 +100,7 @@ are easy to change.
 - Local SEO meta: `geo.region`, `geo.position`, `ICBM`, and `robots: max-image-preview:large`.
 - Structured data (`@graph` in the page) for richer Google results:
   - `CleaningService` with licence number, address, geo coordinates, both phones, hours,
-    area served, social profiles, logo, an `OfferCatalog` of the AED 35 / 45 / 75 rates,
+    area served, social profiles, logo, the published deep-cleaning rate and tailored quotes,
     an `aggregateRating`, and the four Google reviews as `Review` objects (these are what
     make star ratings eligible to appear in search).
   - `FAQPage` generated automatically from the on-page FAQ, so the two never drift apart.

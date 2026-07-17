@@ -23,7 +23,7 @@ const CONFIG = {
 
   // Site
   domain: "https://www.beethrivecleaning.com",
-  priceRange: "AED 35 to AED 75 per hour",
+  priceRange: "AED 75 per hour and tailored quotes",
   // Days the business is open. Update closedDay if a different rest day applies.
   openDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"],
   opens: "08:00",
@@ -262,8 +262,6 @@ const REVIEWS = [
 ];
 
 const OFFERS = [
-  { name: "Normal cleaning without materials", price: "35", unit: "HUR" },
-  { name: "Normal cleaning with materials", price: "45", unit: "HUR" },
   { name: "Deep cleaning with materials", price: "75", unit: "HUR" }
 ];
 
