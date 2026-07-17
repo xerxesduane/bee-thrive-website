@@ -23,7 +23,6 @@ const CONFIG = {
 
   // Site
   domain: "https://www.beethrivecleaning.com",
-  priceRange: "AED 75 per hour and tailored quotes",
   // Days the business is open. Update closedDay if a different rest day applies.
   openDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"],
   opens: "08:00",
@@ -261,10 +260,6 @@ const REVIEWS = [
   { author: "Nikki Zaballerro", body: "The best cleaning company so far I have experienced in UAE." }
 ];
 
-const OFFERS = [
-  { name: "Deep cleaning with materials", price: "75", unit: "HUR" }
-];
-
 // Services listed in structured data for topical coverage (no fixed price).
 const SERVICE_TYPES = [
   "Home cleaning", "Office and commercial cleaning", "Deep cleaning",
@@ -293,9 +288,7 @@ function injectJsonLd() {
       "Post-construction cleaning", "Villa cleaning", "Airbnb and holiday home cleaning",
       "Carpet cleaning", "Commercial cleaning"
     ],
-    "priceRange": CONFIG.priceRange,
     "paymentAccepted": "Cash, Bank transfer",
-    "currenciesAccepted": "AED",
     "foundingDate": CONFIG.established,
     "parentOrganization": { "@type": "Organization", "name": CONFIG.legalEntity },
     "identifier": { "@type": "PropertyValue", "name": "Dubai DET Trade Licence", "value": CONFIG.licence },
@@ -324,21 +317,7 @@ function injectJsonLd() {
       "closes": CONFIG.closes
     }],
     "sameAs": [CONFIG.instagram, CONFIG.facebook],
-    "slogan": "Cleaning beyond expectations, delivered to your doorstep.",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Cleaning services",
-      "itemListElement": OFFERS.map((o) => ({
-        "@type": "Offer",
-        "itemOffered": { "@type": "Service", "name": o.name },
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": o.price,
-          "priceCurrency": "AED",
-          "unitCode": o.unit
-        }
-      }))
-    }
+    "slogan": "Cleaning beyond expectations, delivered to your doorstep."
     // Note: on-page Google reviews are shown to visitors but intentionally not
     // emitted as Review/aggregateRating markup. Google's review-snippet policy
     // disallows self-serving ratings sourced from third-party sites.
