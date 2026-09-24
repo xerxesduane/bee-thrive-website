@@ -13,7 +13,7 @@ const CONFIG = {
   phonePrimary: "+971 56 846 2872",    // main line: WhatsApp + inquiry calls
   phoneSecondary: "+971 56 509 1801",
   whatsapp: "971568462872",            // digits only, used in wa.me links
-  email: "digitalthrivefm@gmail.com",
+  email: "sales.operations@beethrivecleaning.com",
   address: "Office #201, Al Qasimi Building, Salahuddin Street, Deira, Dubai, UAE",
 
   // Social + map
