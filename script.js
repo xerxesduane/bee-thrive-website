@@ -28,13 +28,15 @@ const CONFIG = {
   opens: "08:00",
   closes: "20:00",
 
-  defaultMessage: "Hello Bee Thrive, I would like a free quote for cleaning services."
+  defaultMessage: "I'm interested, referred by Xerxes"
 };
 
 /* ---------- Helpers ---------- */
 const tel = (n) => "tel:" + n.replace(/[^\d+]/g, "");
 const waLink = (msg) =>
   "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg || CONFIG.defaultMessage);
+const mailLink = () =>
+  "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent(CONFIG.defaultMessage) + "&body=" + encodeURIComponent(CONFIG.defaultMessage);
 
 /* ---------- Wire up all data-driven links ---------- */
 function bindLinks() {
@@ -46,7 +48,7 @@ function bindLinks() {
   // Click-to-call and email use native tel:/mailto: links.
   document.querySelectorAll("[data-call-primary]").forEach((el) => (el.href = tel(CONFIG.phonePrimary)));
   document.querySelectorAll("[data-call-secondary]").forEach((el) => (el.href = tel(CONFIG.phoneSecondary)));
-  document.querySelectorAll("[data-email]").forEach((el) => (el.href = "mailto:" + CONFIG.email));
+  document.querySelectorAll("[data-email]").forEach((el) => (el.href = mailLink()));
 
   document.querySelectorAll("[data-maps]").forEach((el) => { el.href = CONFIG.maps; external(el); });
   document.querySelectorAll("[data-instagram]").forEach((el) => { el.href = CONFIG.instagram; external(el); });
@@ -121,7 +123,7 @@ function initForm() {
     if (!form.reportValidity()) return;
     const d = new FormData(form);
     const lines = [
-      "Hello Bee Thrive, I would like a free quote for cleaning.",
+      CONFIG.defaultMessage,
       "",
       "Name: " + (d.get("name") || "").trim(),
       "Phone: " + (d.get("phone") || "").trim(),
