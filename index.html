@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bee Thrive Cleaning Services | Dubai &amp; Sharjah Cleaning Company</title>
-  <meta name="description" content="Licensed Dubai and Sharjah cleaning company. Home, office, deep, move-in, Airbnb and post-construction cleaning with free on-site supervision. Get a free WhatsApp quote." />
-  <meta name="keywords" content="cleaning services Dubai, cleaning company Sharjah, deep cleaning Dubai, post construction cleaning Dubai, villa cleaning, office cleaning Deira, Airbnb cleaning Dubai, move in move out cleaning" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Cleaning Company in Dubai &amp; Sharjah | Bee Thrive</title>
+  <meta name="description" content="Licensed Dubai cleaning company with a free on-site supervisor on every job. Homes, offices and holiday homes in Dubai and Sharjah. Free WhatsApp quote." />
+  <meta name="keywords" content="best cleaning company in Dubai, cleaning company in Dubai, cleaning services Dubai, cleaning services Sharjah, deep cleaning Dubai, move in move out cleaning Dubai, post construction cleaning Dubai, office cleaning Dubai, Airbnb cleaning Dubai, cleaning company Deira" />
   <meta name="theme-color" content="#F4A300" />
   <link rel="canonical" href="https://www.beethrivecleaning.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -22,14 +22,14 @@
   <link rel="apple-touch-icon" href="assets/apple-touch.png" />
   <link rel="manifest" href="site.webmanifest" />
 
-  <!-- Preload the hero image (likely LCP element) -->
-  <link rel="preload" as="image" href="assets/work-windows-2.jpg" fetchpriority="high" />
+  <!-- Preload the hero photo on wide screens only (on phones it sits below the hero card) -->
+  <link rel="preload" as="image" href="assets/work-windows-2.jpg" fetchpriority="high" media="(min-width: 941px)" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Bee Thrive Cleaning Services" />
-  <meta property="og:title" content="Bee Thrive Cleaning Services | Dubai &amp; Sharjah Cleaning Company" />
-  <meta property="og:description" content="A licensed cleaning company across Dubai and Sharjah that leaves your home or business spotless, so you get your time back. Vetted team with free on-site supervision." />
+  <meta property="og:title" content="Bee Thrive | Dubai's Best-Supervised Cleaning Company" />
+  <meta property="og:description" content="A licensed cleaning company for homes and businesses in Dubai and Sharjah, with a free supervisor on every job. Get a free quote on WhatsApp." />
   <meta property="og:image" content="https://www.beethrivecleaning.com/assets/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -37,17 +37,17 @@
   <meta property="og:locale" content="en_AE" />
   <meta property="og:url" content="https://www.beethrivecleaning.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bee Thrive Cleaning Services | Dubai &amp; Sharjah Cleaning Company" />
-  <meta name="twitter:description" content="A licensed cleaning company across Dubai and Sharjah that leaves your home or business spotless, so you get your time back. Get a free WhatsApp quote." />
+  <meta name="twitter:title" content="Bee Thrive | Dubai's Best-Supervised Cleaning Company" />
+  <meta name="twitter:description" content="A licensed cleaning company for homes and businesses in Dubai and Sharjah, with a free supervisor on every job. Get a free quote on WhatsApp." />
   <meta name="twitter:image" content="https://www.beethrivecleaning.com/assets/og-cover.jpg" />
 
   <!-- Fonts: loaded without blocking render, with a no-JS fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
   </noscript>
 
   <link rel="stylesheet" href="styles.css" />
@@ -55,11 +55,38 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Icon sprite: each icon is drawn once and reused with <use href="#i-..."> -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-wa" viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.2 1.1 1.1-4.1-.3-.4a10 10 0 01-1.6-5.5c0-5.6 4.6-10.2 10.5-10.2S26.5 9.9 26.5 15.5 21.9 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.4-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.6a1 1 0 01-.25 1z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3l9-8z"/></symbol>
+    <symbol id="i-business" viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13h-6v-6H9v6H3z"/></symbol>
+    <symbol id="i-holiday" viewBox="0 0 24 24"><path d="M3 11h18v2H3zm2 3h14v6h-2v-2H7v2H5v-6zm3-9h8a3 3 0 013 3v2H5V8a3 3 0 013-3z"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><path d="M12 2a4 4 0 014 4 4 4 0 01-8 0 4 4 0 014-4zm0 10c4 0 8 2 8 5v3H4v-3c0-3 4-5 8-5z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2l9 4.5v11L12 22l-9-4.5v-11L12 2zm0 2.2L6.2 7.1 12 10l5.8-2.9L12 4.2zM5 8.7v7.6l6 3v-7.6l-6-3zm14 0l-6 3v7.6l6-3V8.7z"/></symbol>
+    <symbol id="i-build" viewBox="0 0 24 24"><path d="M11 4h2a1 1 0 011 1v3.1A7 7 0 0119 15v1h2v3H3v-3h2v-1a7 7 0 015-6.9V5a1 1 0 011-1zm-1 6.3A5 5 0 007 15v1h10v-1a5 5 0 00-3-4.7V13h-4v-2.7z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l2.3 6.4L21 11l-6.7 2.6L12 20l-2.3-6.4L3 11l6.7-2.6L12 2zm7 13l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M13.4 2.1A10 10 0 1021.9 14 8 8 0 0113.4 2.1z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 3h14a1 1 0 011 1v16l-8-4.5L4 20V4a1 1 0 011-1z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-seal" viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3-.3 1 2.8 2.6 1.5-.7 2.9.7 2.9-2.6 1.5-1 2.8-3-.3L12 22l-2.4-1.8-3 .3-1-2.8L3 16.5l.7-2.9L3 10.7l2.6-1.5 1-2.8 3 .3L12 2z" fill="#F4A300"/><path d="M10.4 14.6l-2.1-2.1-1.3 1.3 3.4 3.4 6-6-1.3-1.3z" fill="#1B1A17"/></symbol>
+    <symbol id="i-seal-ink" viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3-.3 1 2.8 2.6 1.5-.7 2.9.7 2.9-2.6 1.5-1 2.8-3-.3L12 22l-2.4-1.8-3 .3-1-2.8L3 16.5l.7-2.9L3 10.7l2.6-1.5 1-2.8 3 .3L12 2z" fill="#1B1A17"/><path d="M10.4 14.6l-2.1-2.1-1.3 1.3 3.4 3.4 6-6-1.3-1.3z" fill="#F4A300"/></symbol>
+  </svg>
+
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <p>Trade Licence 1416022 · Six days a week · Dubai and Sharjah</p>
+        <p class="topbar-links">
+          <a data-call-primary href="#contact">+971 56 846 2872</a>
+          <a data-email href="#contact">sales.operations@<wbr>beethrivecleaning.com</a>
+        </p>
+      </div>
+    </div>
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Bee Thrive Cleaning Services home">
-        <img src="assets/logo-mark@400.png" alt="Bee Thrive Cleaning Services logo" width="56" height="58" />
+        <img src="assets/logo-mark-128.png" alt="Bee Thrive Cleaning Services logo" width="56" height="58" decoding="async" />
         <span class="brand-text">
           <span class="brand-name">Bee Thrive</span>
           <span class="brand-sub">Cleaning Services</span>
@@ -68,20 +95,27 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Primary">
         <a href="#services">Services</a>
-        <a href="#why">Why us</a>
-        <a href="#how">How it works</a>
-        <a href="#showreel">Showreel</a>
-        <a href="#pricing">Quotes</a>
+        <a href="#why">Why Bee Thrive</a>
         <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+        <a href="#areas">Areas</a>
+        <a href="#faq">FAQ</a>
+        <div class="nav-cta">
+          <a class="btn btn-whatsapp btn-block" data-wa-link href="#contact">
+            <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+            <span><span class="label-long">Get my free</span><span class="label-short">Free</span> quote on WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost btn-block" data-call-primary href="#contact">Call +971 56 846 2872</a>
+        </div>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-whatsapp" data-wa-link href="#contact">
-          <svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.2 1.1 1.1-4.1-.3-.4a10 10 0 01-1.6-5.5c0-5.6 4.6-10.2 10.5-10.2S26.5 9.9 26.5 15.5 21.9 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.4-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
-          Book on WhatsApp
+        <a class="icon-btn" data-call-primary href="#contact" aria-label="Call Bee Thrive on +971 56 846 2872">
+          <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
         </a>
-        <a class="btn btn-ghost" data-call-primary href="#contact">Call us</a>
+        <a class="btn btn-whatsapp" data-wa-link href="#contact">
+          <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+          Free quote
+        </a>
         <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
@@ -91,243 +125,727 @@
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO (bento) ============ -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
-      <div class="orbit" aria-hidden="true">
-        <div class="o1"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="300" cy="300" rx="290" ry="170" stroke="rgba(224,134,0,0.38)" stroke-width="1.5" stroke-dasharray="2 9"/></svg></div>
-        <div class="o2"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="300" cy="300" rx="175" ry="285" stroke="rgba(224,134,0,0.38)" stroke-width="1.5" stroke-dasharray="2 9"/></svg></div>
-      </div>
       <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow hero-anim"><span class="hex-dot" aria-hidden="true"></span> Licensed cleaning company in Dubai and Sharjah</p>
-          <h1 id="hero-title" class="hero-anim">Walk into a spotless space, every single time.</h1>
-          <p class="hero-lead hero-anim">Bee Thrive sends a licensed, vetted, and supervised team across Dubai and Sharjah to clean your home or business beyond expectations. Book in minutes on WhatsApp, relax while we handle it, and enjoy a space you are proud of.</p>
+        <div class="hero-copy bento-card">
+          <p class="eyebrow hero-anim"><span class="hex-dot" aria-hidden="true"></span> Licensed cleaning company · Dubai and Sharjah</p>
+          <h1 id="hero-title" class="hero-anim">Dubai's <span class="nowrap">best-supervised</span> cleaning company for homes and businesses</h1>
+          <p class="hero-lead hero-anim">Every Bee Thrive job comes with a free on-site supervisor who checks the work, so the standard is the same on every visit. A licensed, vetted team cleans your home, office or holiday home across Dubai and Sharjah, and booking takes minutes on WhatsApp.</p>
           <div class="hero-cta hero-anim">
-            <a class="btn btn-primary" data-wa-link href="#contact">Get your free quote</a>
+            <a class="btn btn-primary" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              <span><span class="label-long">Get my free</span><span class="label-short">Free</span> quote on WhatsApp</span>
+            </a>
             <a class="btn btn-ghost" data-call-primary href="#contact">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="ph-ico"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.6a1 1 0 01-.25 1z"/></svg>
-              Call us now
+              <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              Call +971 56 846 2872
             </a>
           </div>
+          <p class="cta-micro hero-anim">Free quote · No obligation · Replies on WhatsApp</p>
           <ul class="hero-trust hero-anim">
-            <li><span class="hex-check" aria-hidden="true"></span> Licensed by Dubai Economy and Tourism</li>
-            <li><span class="hex-check" aria-hidden="true"></span> Trained and vetted professionals</li>
-            <li><span class="hex-check" aria-hidden="true"></span> Free on-site supervision on every job</li>
+            <li><span class="hex-check" aria-hidden="true"></span> Trade Licence 1416022, Dubai Economy and Tourism</li>
+            <li><span class="hex-check" aria-hidden="true"></span> Free supervisor on every job</li>
+            <li><span class="hex-check" aria-hidden="true"></span> Vetted, trained team</li>
           </ul>
+          <figure class="hero-quote hero-anim">
+            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>The best cleaning company so far I have experienced in UAE.</blockquote>
+            <figcaption>Nikki Zaballerro · Google review</figcaption>
+          </figure>
         </div>
-        <div class="hero-media hero-anim">
-          <div class="hero-frame">
-            <img src="assets/work-windows-2.jpg" alt="A Bee Thrive professional cleaning office windows high above a Deira street in Dubai" width="1280" height="958" fetchpriority="high" />
+
+        <div class="bento-tiles hero-anim">
+          <div class="bento-tile bento-photo tile-1">
+            <img src="assets/work-windows-2.jpg" alt="A Bee Thrive professional cleaning office windows high above a Deira street in Dubai" width="1280" height="958" fetchpriority="high" decoding="async" />
           </div>
-          <div class="hero-badge">
-            <span class="hero-badge-num" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="hero-badge-label">Five-star reviews from clients on Google</span>
+          <div class="bento-tile bento-reel tile-2">
+            <img src="assets/showreel-office-poster.jpg" alt="" width="540" height="960" loading="lazy" />
+            <button type="button" class="bento-play" data-reel-src="assets/showreel-office.mp4" data-reel-poster="assets/showreel-office-poster.jpg" aria-label="Play a 27 second video of a real Bee Thrive office clean">
+              <span class="play-tri" aria-hidden="true"></span>
+            </button>
+            <span class="bento-chip">Real job, filmed on site</span>
+          </div>
+          <div class="bento-tile bento-photo tile-3">
+            <img src="assets/work-office.jpg" alt="A bright, freshly cleaned office in Dubai after a Bee Thrive visit" width="1280" height="958" loading="lazy" />
+          </div>
+          <div class="bento-tile bento-promise tile-4">
+            <svg class="bento-seal" aria-hidden="true" focusable="false"><use href="#i-seal-ink"/></svg>
+            <p class="bento-promise-title">Free on-site supervision on every job</p>
+            <p>Not right? Tell us within 24 hours and we come back to re-clean it, free.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============ TRUST STRIP ============ -->
-    <section class="trust-strip" aria-label="Company highlights">
-      <div class="container trust-grid">
-        <div class="trust-item"><span class="trust-num">2024</span><span class="trust-label">Established in Dubai</span></div>
-        <div class="trust-item"><span class="trust-num">Free</span><span class="trust-label">On-site supervision</span></div>
-        <div class="trust-item"><span class="trust-num">6</span><span class="trust-label">Days a week, flexible scheduling</span></div>
-        <div class="trust-item"><span class="trust-num">Dubai &rarr; Sharjah</span><span class="trust-label">All Emirates for projects</span></div>
+    <section class="trust-strip" aria-label="Why clients trust Bee Thrive">
+      <div class="trust-grid">
+        <div class="trust-item"><span class="trust-num">1416022</span><span class="trust-label">Trade Licence, Dubai Economy and Tourism</span></div>
+        <div class="trust-item"><span class="trust-num">Free</span><span class="trust-label">Supervisor on every job</span></div>
+        <div class="trust-item"><span class="trust-num">24h</span><span class="trust-label">Re-clean promise: tell us, we return free</span></div>
+        <div class="trust-item"><span class="trust-num"><span data-count="6">6</span></span><span class="trust-label">Days a week, flexible scheduling</span></div>
+        <div class="trust-item"><span class="trust-num">5-star</span><span class="trust-label">Reviews from clients on Google</span></div>
+        <div class="trust-item"><span class="trust-num">Dubai + Sharjah</span><span class="trust-label">Homes and offices, projects across all Emirates</span></div>
       </div>
     </section>
 
-    <!-- ============ EMPATHY ============ -->
-    <section class="section on-canvas" aria-labelledby="empathy-title">
-      <div class="container container-narrow empathy">
-        <h2 id="empathy-title">You have better things to do than clean.</h2>
-        <p>Between work, family, and running a business, a deep clean keeps slipping down the list. Dust builds up, guests are coming, the office needs to look right for clients, and finding a cleaning team you can actually trust feels like one more job. Bee Thrive takes it off your plate. A supervised, professional team arrives on time, brings everything needed, and leaves every corner fresh. You simply enjoy the result.</p>
+    <!-- ============ TRUSTED BY ============ -->
+    <section class="trusted-by" aria-label="Clients who trust Bee Thrive">
+      <div class="container">
+        <p class="trusted-label">Trusted by holiday-home operators, offices and event teams</p>
+        <ul class="trusted-list">
+          <li>MSH Holiday Homes</li>
+          <li>Crescent Holiday Homes</li>
+          <li>Nalada Holiday Homes</li>
+          <li>Loft and Keys Holiday Homes</li>
+          <li>Fixem Solutions</li>
+          <li>Cerafiltech</li>
+          <li>Landcom Real Estate</li>
+          <li>Mindstream</li>
+          <li>Hashtag #10</li>
+          <li>TK Airport Solutions</li>
+          <li>YUSR</li>
+          <li>CF Helmet Warehouse</li>
+          <li>Star Shine Media Technology</li>
+          <li>Identity Events LLC</li>
+          <li>Al Mutarid Community Center</li>
+          <li>Car Show</li>
+        </ul>
+        <a class="trusted-more" href="#clients">See our full track record</a>
       </div>
     </section>
 
-    <!-- ============ SERVICES ============ -->
+    <!-- ============ SERVICES (lanes + finder) ============ -->
     <section class="section panel" id="services" aria-labelledby="services-title">
       <div class="container">
         <header class="section-head">
           <p class="kicker">What we do</p>
-          <h2 id="services-title">Cleaning for every space in Dubai and Sharjah</h2>
-          <p class="section-intro">From a weekly home tidy to a post-construction villa handover or an after-hours restaurant deep clean, pick the service you need today. Every visit is supervised and finished to the same high standard.</p>
+          <h2 id="services-title">Cleaning services in Dubai and Sharjah</h2>
+          <p class="section-intro">You have better things to do than clean. Pick the space you need looked after, or search for a service or your area. Every Bee Thrive service includes a free on-site supervisor and a quote agreed before we start.</p>
         </header>
 
-        <!-- Commercial -->
-        <div class="svc-group">
-          <div class="svc-group-head">
-            <span class="hex-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13h-6v-6H9v6H3z"/></svg>
-            </span>
-            <h3>Commercial cleaning</h3>
-            <p>A spotless space your clients and team notice.</p>
-          </div>
-          <div class="card-grid">
-            <article class="svc-card"><h4>Office cleaning</h4><p>Before or after office hours, timed so your work is never interrupted.</p></article>
-            <article class="svc-card"><h4>Shops and retail</h4><p>Before or after trading hours, so your store always looks its best.</p></article>
-            <article class="svc-card"><h4>Clinics and cafes</h4><p>Hygiene-focused cleaning that meets the standards these spaces require.</p></article>
-            <article class="svc-card"><h4>Restaurant and cafeteria deep cleaning</h4><p>After hours, with full degreasing and sanitizing.</p></article>
-            <article class="svc-card"><h4>Warehouse cleaning</h4><p>For storage, logistics, and industrial facilities.</p></article>
-            <article class="svc-card"><h4>Post-construction turnover</h4><p>Handover-ready cleaning for new commercial buildings across Dubai and Sharjah.</p></article>
-          </div>
+        <div class="lanes">
+          <a class="lane-card" href="#svc-grid" data-lane="home">
+            <span class="hex-badge" aria-hidden="true"><svg><use href="#i-home"/></svg></span>
+            <h3>For your home</h3>
+            <p>Flats and villas kept fresh, from regular visits to a full deep clean.</p>
+            <span class="lane-more">See services <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="lane-card" href="#svc-grid" data-lane="business">
+            <span class="hex-badge" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+            <h3>For your business</h3>
+            <p>Offices, shops, clinics and restaurants, cleaned around your hours.</p>
+            <span class="lane-more">See services <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="lane-card" href="#svc-grid" data-lane="holiday">
+            <span class="hex-badge" aria-hidden="true"><svg><use href="#i-holiday"/></svg></span>
+            <h3>For holiday-home hosts</h3>
+            <p>Guest-ready turnovers between stays, with optional linen and towels.</p>
+            <span class="lane-more">See services <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="lane-card" href="#svc-grid" data-lane="moves">
+            <span class="hex-badge" aria-hidden="true"><svg><use href="#i-box"/></svg></span>
+            <h3>Moves, handovers and support</h3>
+            <p>Move-in and move-out, post-construction turnover, packing and help at home.</p>
+            <span class="lane-more">See services <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></span>
+          </a>
         </div>
 
-        <!-- Residential -->
-        <div class="svc-group">
-          <div class="svc-group-head">
-            <span class="hex-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3l9-8z"/></svg>
-            </span>
-            <h3>Residential cleaning</h3>
-            <p>Come home to calm and order.</p>
+        <div class="finder" id="svc-finder" role="search" hidden>
+          <label for="svc-search" class="finder-label">Find a service or your area</label>
+          <input id="svc-search" type="search" autocomplete="off" enterkeyhint="search"
+                 placeholder="Try deep cleaning, office or Dubai Marina" aria-describedby="svc-count" />
+          <div class="chips" role="group" aria-label="Filter services">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-filter="home" aria-pressed="false">Homes</button>
+            <button type="button" class="chip" data-filter="business" aria-pressed="false">Businesses</button>
+            <button type="button" class="chip" data-filter="holiday" aria-pressed="false">Holiday homes</button>
+            <button type="button" class="chip" data-filter="moves" aria-pressed="false">Moves and support</button>
           </div>
-          <div class="card-grid">
-            <article class="svc-card"><h4>Normal cleaning for flats and villas</h4><p>Keeps your home consistently fresh, visit after visit.</p></article>
-            <article class="svc-card"><h4>Deep cleaning, top to bottom</h4><p>Reaches the corners everyday cleaning tends to miss.</p></article>
-            <article class="svc-card"><h4>Laundry and ironing</h4><p>Handled in your home, fresh and neatly pressed.</p></article>
-            <article class="svc-card"><h4>Carpet cleaning</h4><p>Lifts stains, dust, and allergens for a brighter finish.</p></article>
-            <article class="svc-card"><h4>Move-in and move-out deep cleaning</h4><p>A thorough reset that meets handover standards.</p></article>
-            <article class="svc-card"><h4>Post-construction villa turnover</h4><p>From construction dust to move-in ready, for villas across Dubai and Sharjah.</p></article>
-          </div>
+          <p id="svc-count" class="finder-count" aria-live="polite" aria-atomic="true">Showing all 20 services</p>
+          <div class="finder-area" id="svc-area-match" hidden></div>
         </div>
 
-        <!-- Hospitality -->
-        <div class="svc-group">
-          <div class="svc-group-head">
-            <span class="hex-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 11h18v2H3zm2 3h14v6h-2v-2H7v2H5v-6zm3-9h8a3 3 0 013 3v2H5V8a3 3 0 013-3z"/></svg>
-            </span>
-            <h3>Hospitality and short stay</h3>
-            <p>Guest ready, turn after turn.</p>
-          </div>
-          <div class="card-grid">
-            <article class="svc-card"><h4>Airbnb and holiday homes</h4><p>Guest-ready cleaning with optional linen and towel service.</p></article>
-            <article class="svc-card"><h4>Turnover cleaning</h4><p>Fast resets between guest stays, so your reviews stay five star.</p></article>
-          </div>
+        <div class="svc-grid" id="svc-grid">
+          <!-- 1 -->
+          <article class="svc-card is-signature" id="svc-deep-cleaning" data-cat="home" data-service="Deep cleaning"
+                   data-keywords="deep clean spring clean villa apartment flat full reset home">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-spark"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag tag-signature">Signature</li></ul>
+            </div>
+            <h3>Deep cleaning, top to bottom</h3>
+            <p>Reaches the corners everyday cleaning tends to miss.</p>
+            <details class="svc-more">
+              <summary>What's included</summary>
+              <ul class="tick-list">
+                <li>Top to bottom, including the corners everyday cleaning misses</li>
+                <li>Team arrives with professional-grade equipment and materials</li>
+                <li>A supervisor checks the work, at no extra cost</li>
+                <li>Tell us within 24 hours if any area needs another pass</li>
+              </ul>
+              <p class="svc-when"><strong>A good time to book:</strong> Before guests arrive, after a busy season, or when the whole home needs a reset.</p>
+            </details>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Deep cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about deep cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Deep cleaning">Use the quote form<span class="visually-hidden"> for deep cleaning</span></a>
+            </div>
+          </article>
+          <!-- 2 -->
+          <article class="svc-card is-signature" id="svc-move-in-out" data-cat="home moves" data-service="Move-in and move-out cleaning"
+                   data-keywords="move in move out moving handover end of tenancy lease vacate keys apartment villa">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-box"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag tag-signature">Signature</li><li class="tag">Handover-ready</li></ul>
+            </div>
+            <h3>Move-in and move-out deep cleaning</h3>
+            <p>A thorough reset that meets handover standards.</p>
+            <details class="svc-more">
+              <summary>What's included</summary>
+              <ul class="tick-list">
+                <li>A thorough reset that meets handover standards</li>
+                <li>Team arrives fully equipped</li>
+                <li>Supervisor check included</li>
+                <li>Quote based on property size and handover requirements</li>
+              </ul>
+              <p class="svc-when"><strong>A good time to book:</strong> In the days before you hand back the keys, or before you move your things in.</p>
+            </details>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Move-in and move-out cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about move-in and move-out cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Move-in and move-out cleaning">Use the quote form<span class="visually-hidden"> for move-in and move-out cleaning</span></a>
+            </div>
+          </article>
+          <!-- 3 -->
+          <article class="svc-card is-signature" id="svc-post-construction-villa" data-cat="home moves" data-service="Post-construction villa turnover"
+                   data-keywords="post construction after builders renovation dust handover villa new build">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-build"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag tag-signature">Signature</li><li class="tag">Handover-ready</li></ul>
+            </div>
+            <h3>Post-construction villa turnover</h3>
+            <p>From construction dust to move-in ready, for villas across Dubai and Sharjah.</p>
+            <details class="svc-more">
+              <summary>What's included</summary>
+              <ul class="tick-list">
+                <li>Construction dust cleared to move-in ready</li>
+                <li>For villas across Dubai and Sharjah</li>
+                <li>Supervisor check included</li>
+                <li>Quote based on size, site condition and scope</li>
+              </ul>
+              <p class="svc-when"><strong>A good time to book:</strong> Once the builders have finished and before furniture goes in.</p>
+            </details>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Post-construction villa turnover" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about post-construction villa turnover</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Post-construction villa turnover">Use the quote form<span class="visually-hidden"> for post-construction villa turnover</span></a>
+            </div>
+          </article>
+          <!-- 4 -->
+          <article class="svc-card is-signature" id="svc-post-construction-commercial" data-cat="business moves" data-service="Post-construction commercial turnover"
+                   data-keywords="post construction after builders fit out renovation handover commercial building new build">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-build"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag tag-signature">Signature</li><li class="tag">Handover-ready</li></ul>
+            </div>
+            <h3>Post-construction turnover for commercial buildings</h3>
+            <p>Handover-ready cleaning for new commercial buildings across Dubai and Sharjah.</p>
+            <details class="svc-more">
+              <summary>What's included</summary>
+              <ul class="tick-list">
+                <li>Handover-ready cleaning for new commercial buildings</li>
+                <li>Planned around your project timeline</li>
+                <li>Supervisor check included</li>
+                <li>Quote based on building size, site condition and scope</li>
+              </ul>
+              <p class="svc-when"><strong>A good time to book:</strong> After fit-out or construction, ahead of handover or opening.</p>
+            </details>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Post-construction commercial turnover" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about post-construction commercial turnover</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Post-construction commercial turnover">Use the quote form<span class="visually-hidden"> for post-construction commercial turnover</span></a>
+            </div>
+          </article>
+          <!-- 5 -->
+          <article class="svc-card is-signature" id="svc-office" data-cat="business" data-service="Office cleaning"
+                   data-keywords="office workplace corporate commercial after hours business contract">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag tag-signature">Signature</li><li class="tag">After hours</li></ul>
+            </div>
+            <h3>Office cleaning</h3>
+            <p>Before or after office hours, timed so your work is never interrupted.</p>
+            <details class="svc-more">
+              <summary>What's included</summary>
+              <ul class="tick-list">
+                <li>Before or after office hours</li>
+                <li>Hourly, monthly or yearly plans, six days a week</li>
+                <li>Free on-site supervision so the standard never slips</li>
+                <li>Better rates for regular plans</li>
+              </ul>
+              <p class="svc-when"><strong>A good time to book:</strong> Set up a regular plan, or book a deep clean before a client visit.</p>
+            </details>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Office cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about office cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Office cleaning">Use the quote form<span class="visually-hidden"> for office cleaning</span></a>
+            </div>
+          </article>
+          <!-- 6 -->
+          <article class="svc-card is-signature" id="svc-holiday-homes" data-cat="holiday" data-service="Airbnb and holiday home cleaning"
+                   data-keywords="airbnb holiday home short stay host guest linen towels vacation rental">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-holiday"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag tag-signature">Signature</li><li class="tag">Linen optional</li></ul>
+            </div>
+            <h3>Airbnb and holiday homes</h3>
+            <p>Guest-ready cleaning with optional linen and towel service.</p>
+            <details class="svc-more">
+              <summary>What's included</summary>
+              <ul class="tick-list">
+                <li>Guest-ready cleaning between stays</li>
+                <li>Optional linen and towel service</li>
+                <li>Supervisor check included</li>
+                <li>Quote based on size, amenities, linen and turnover needs</li>
+              </ul>
+              <p class="svc-when"><strong>A good time to book:</strong> Between every checkout and check-in.</p>
+            </details>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Airbnb and holiday home cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about Airbnb and holiday home cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Airbnb and holiday home cleaning">Use the quote form<span class="visually-hidden"> for Airbnb and holiday home cleaning</span></a>
+            </div>
+          </article>
+          <!-- 7 -->
+          <article class="svc-card" id="svc-turnover" data-cat="holiday" data-service="Turnover cleaning between guests"
+                   data-keywords="turnover changeover airbnb holiday home guest checkout check in host">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-holiday"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">Between stays</li></ul>
+            </div>
+            <h3>Turnover cleaning</h3>
+            <p>Fast resets between guest stays, so your reviews stay five star.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Turnover cleaning between guests" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about turnover cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Turnover cleaning between guests">Use the quote form<span class="visually-hidden"> for turnover cleaning</span></a>
+            </div>
+          </article>
+          <!-- 8 -->
+          <article class="svc-card" id="svc-normal" data-cat="home" data-service="Normal home cleaning"
+                   data-keywords="normal regular weekly home house flat villa apartment general routine">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-home"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">Minimum 2 hours</li></ul>
+            </div>
+            <h3>Normal cleaning for flats and villas</h3>
+            <p>Keeps your home consistently fresh, visit after visit.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Normal home cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about normal home cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Normal home cleaning">Use the quote form<span class="visually-hidden"> for normal home cleaning</span></a>
+            </div>
+          </article>
+          <!-- 9 -->
+          <article class="svc-card" id="svc-laundry" data-cat="home" data-service="Laundry and ironing"
+                   data-keywords="laundry ironing clothes washing pressing">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-home"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">In your home</li></ul>
+            </div>
+            <h3>Laundry and ironing</h3>
+            <p>Handled in your home, fresh and neatly pressed.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Laundry and ironing" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about laundry and ironing</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Laundry and ironing">Use the quote form<span class="visually-hidden"> for laundry and ironing</span></a>
+            </div>
+          </article>
+          <!-- 10 -->
+          <article class="svc-card" id="svc-carpet" data-cat="home" data-service="Carpet cleaning"
+                   data-keywords="carpet rug stain shampoo allergens">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-home"/></svg></span>
+            </div>
+            <h3>Carpet cleaning</h3>
+            <p>Lifts stains, dust, and allergens for a brighter finish.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Carpet cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about carpet cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Carpet cleaning">Use the quote form<span class="visually-hidden"> for carpet cleaning</span></a>
+            </div>
+          </article>
+          <!-- 11 -->
+          <article class="svc-card" id="svc-maid" data-cat="home" data-service="Maid services"
+                   data-keywords="maid housemaid helper household cleaner part time">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-person"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">Regular or one-off</li></ul>
+            </div>
+            <h3>Maid services</h3>
+            <p>For regular or one-off household help.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Maid services" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about maid services</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Maid services">Use the quote form<span class="visually-hidden"> for maid services</span></a>
+            </div>
+          </article>
+          <!-- 12 -->
+          <article class="svc-card" id="svc-retail" data-cat="business" data-service="Shops and retail cleaning"
+                   data-keywords="shop store retail mall boutique showroom after hours">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">After hours</li></ul>
+            </div>
+            <h3>Shops and retail</h3>
+            <p>Before or after trading hours, so your store always looks its best.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Shops and retail cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about shops and retail cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Shops and retail cleaning">Use the quote form<span class="visually-hidden"> for shops and retail cleaning</span></a>
+            </div>
+          </article>
+          <!-- 13 -->
+          <article class="svc-card" id="svc-clinics-cafes" data-cat="business" data-service="Clinics and cafes cleaning"
+                   data-keywords="clinic cafe medical dental hygiene coffee shop">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">Hygiene-focused</li></ul>
+            </div>
+            <h3>Clinics and cafes</h3>
+            <p>Hygiene-focused cleaning that meets the standards these spaces require.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Clinics and cafes cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about clinics and cafes cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Clinics and cafes cleaning">Use the quote form<span class="visually-hidden"> for clinics and cafes cleaning</span></a>
+            </div>
+          </article>
+          <!-- 14 -->
+          <article class="svc-card" id="svc-restaurant" data-cat="business" data-service="Restaurant and cafeteria deep cleaning"
+                   data-keywords="restaurant cafeteria kitchen degreasing sanitising sanitizing canteen after hours">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">After hours</li></ul>
+            </div>
+            <h3>Restaurant and cafeteria deep cleaning</h3>
+            <p>After hours, with full degreasing and sanitising.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Restaurant and cafeteria deep cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about restaurant and cafeteria deep cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Restaurant and cafeteria deep cleaning">Use the quote form<span class="visually-hidden"> for restaurant and cafeteria deep cleaning</span></a>
+            </div>
+          </article>
+          <!-- 15 -->
+          <article class="svc-card" id="svc-warehouse" data-cat="business" data-service="Warehouse cleaning"
+                   data-keywords="warehouse storage logistics industrial factory facility">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+            </div>
+            <h3>Warehouse cleaning</h3>
+            <p>For storage, logistics, and industrial facilities.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Warehouse cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about warehouse cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Warehouse cleaning">Use the quote form<span class="visually-hidden"> for warehouse cleaning</span></a>
+            </div>
+          </article>
+          <!-- 16 -->
+          <article class="svc-card" id="svc-windows" data-cat="business" data-service="Window and glass cleaning"
+                   data-keywords="window glass facade glazing detailing office">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+            </div>
+            <h3>Window and glass cleaning</h3>
+            <p>Window and surface detailing for offices, projects, and handovers.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Window and glass cleaning" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about window and glass cleaning</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Window and glass cleaning">Use the quote form<span class="visually-hidden"> for window and glass cleaning</span></a>
+            </div>
+          </article>
+          <!-- 17 -->
+          <article class="svc-card" id="svc-office-support" data-cat="business" data-service="Office support staff"
+                   data-keywords="office support staff housekeeping admin tea">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-person"/></svg></span>
+            </div>
+            <h3>Office support staff</h3>
+            <p>For daily housekeeping and admin tasks.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Office support staff" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about office support staff</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Office support staff">Use the quote form<span class="visually-hidden"> for office support staff</span></a>
+            </div>
+          </article>
+          <!-- 18 -->
+          <article class="svc-card" id="svc-projects-events" data-cat="business" data-service="Projects and events"
+                   data-keywords="project event exhibition venue show emirates">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-flag"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">All Emirates</li></ul>
+            </div>
+            <h3>Projects and events</h3>
+            <p>Team cleaning for projects and events, with timing and team size planned around you.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Projects and events" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about projects and events</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Projects and events">Use the quote form<span class="visually-hidden"> for projects and events</span></a>
+            </div>
+          </article>
+          <!-- 19 -->
+          <article class="svc-card" id="svc-packing" data-cat="moves" data-service="Packing and unpacking"
+                   data-keywords="packing unpacking moving relocation boxes home office move">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-box"/></svg></span>
+            </div>
+            <h3>Packing and unpacking</h3>
+            <p>For smooth home and office moves.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Packing and unpacking" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about packing and unpacking</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Packing and unpacking">Use the quote form<span class="visually-hidden"> for packing and unpacking</span></a>
+            </div>
+          </article>
+          <!-- 20 -->
+          <article class="svc-card" id="svc-nanny" data-cat="moves" data-service="Nanny and babysitter services"
+                   data-keywords="nanny babysitter childcare kids children">
+            <div class="svc-card-top">
+              <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-person"/></svg></span>
+              <ul class="svc-tags" aria-label="Highlights"><li class="tag">On request</li></ul>
+            </div>
+            <h3>Nanny and babysitter services</h3>
+            <p>Trusted care, available on request.</p>
+            <div class="svc-actions">
+              <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Nanny and babysitter services" href="#contact">
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> Ask on WhatsApp<span class="visually-hidden"> about nanny and babysitter services</span></a>
+              <a class="svc-form-link" href="#contact" data-prefill-service="Nanny and babysitter services">Use the quote form<span class="visually-hidden"> for nanny and babysitter services</span></a>
+            </div>
+          </article>
         </div>
 
-        <!-- Support -->
-        <div class="svc-group">
-          <div class="svc-group-head">
-            <span class="hex-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 014 4 4 4 0 01-8 0 4 4 0 014-4zm0 10c4 0 8 2 8 5v3H4v-3c0-3 4-5 8-5z"/></svg>
-            </span>
-            <h3>Support services</h3>
-            <p>A helping hand whenever you need one.</p>
+        <div class="cta-pair">
+          <p class="cta-line">Not sure which service fits? Tell us about your space and we will suggest the right clean.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              <span><span class="label-long">Get my free</span><span class="label-short">Free</span> quote on WhatsApp</span>
+            </a>
+            <a class="btn btn-ghost" data-call-primary href="#contact">
+              <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              Call +971 56 846 2872
+            </a>
           </div>
-          <div class="card-grid">
-            <article class="svc-card"><h4>Packing and unpacking</h4><p>For smooth home and office moves.</p></article>
-            <article class="svc-card"><h4>Office support staff</h4><p>For daily housekeeping and admin tasks.</p></article>
-            <article class="svc-card"><h4>Nanny and babysitter services</h4><p>Trusted care, available on request.</p></article>
-            <article class="svc-card"><h4>Maid services</h4><p>For regular or one-off household help.</p></article>
-          </div>
+          <p class="cta-micro">Free quote · No obligation · Replies on WhatsApp</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ HOME / BUSINESS VALUE DUO ============ -->
-    <section class="section on-canvas" aria-label="For homes and businesses">
-      <div class="container value-duo">
-        <article class="value-card">
-          <span class="hex-badge value-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-4v-6h-4v6H6v-9H3l9-8z"/></svg>
-          </span>
-          <h3>Your home, the way you love it</h3>
-          <p>You should not have to spend your weekend scrubbing. Our team gives your home back to you, clean and calm, while you rest or spend time with family. Same trusted faces each visit, eco-conscious materials, and a finish you can feel the moment you walk in.</p>
-          <a class="btn btn-primary" data-wa-link href="#contact">Book a home clean</a>
-        </article>
-        <article class="value-card">
-          <span class="hex-badge value-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13h-6v-6H9v6H3z"/></svg>
-          </span>
-          <h3>A workplace that works for your brand</h3>
-          <p>First impressions are made at the door. A clean office, shop, or restaurant tells your clients and your team that you care about the details. We clean around your hours, never disrupt your trading, and include free on-site supervision so the standard never slips. One reliable partner, billed simply, on the schedule you choose.</p>
-          <a class="btn btn-ghost" data-wa-link href="#contact">Request a business quote</a>
-        </article>
+    <!-- ============ MOMENTS (book by moment + prep checklist) ============ -->
+    <section class="section on-canvas" id="moments" aria-labelledby="moments-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">Book by moment</p>
+          <h2 id="moments-title">The right clean for every moment in Dubai</h2>
+          <p class="section-intro">Most bookings start with a moment. Pick yours and we will open WhatsApp with the right service already in your message.</p>
+        </header>
+
+        <div class="moments-controls">
+          <button type="button" class="moments-btn" data-dir="-1" aria-controls="moments-track" aria-label="Previous moments">
+            <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+          </button>
+          <button type="button" class="moments-btn" data-dir="1" aria-controls="moments-track" aria-label="Next moments">
+            <svg aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+        <div class="moments-track" id="moments-track">
+          <article class="moment-card">
+            <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-box"/></svg></span>
+            <h3>Moving in or out</h3>
+            <p>Hand back the keys, or start fresh in your new place, with a clean that meets handover standards.</p>
+            <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Move-in and move-out cleaning" href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> <span>Ask<span class="label-long"> about this</span> on WhatsApp</span><span class="visually-hidden">: moving in or out</span></a>
+          </article>
+          <article class="moment-card">
+            <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-build"/></svg></span>
+            <h3>Construction just finished</h3>
+            <p>From construction dust to move-in ready, for new villas and commercial buildings.</p>
+            <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Post-construction turnover" href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> <span>Ask<span class="label-long"> about this</span> on WhatsApp</span><span class="visually-hidden">: construction just finished</span></a>
+          </article>
+          <article class="moment-card">
+            <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-holiday"/></svg></span>
+            <h3>Guests checking in</h3>
+            <p>Fast, guest-ready resets between stays, with optional linen and towel service.</p>
+            <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Turnover cleaning between guests" href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> <span>Ask<span class="label-long"> about this</span> on WhatsApp</span><span class="visually-hidden">: guests checking in</span></a>
+          </article>
+          <article class="moment-card">
+            <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
+            <h3>Before the office opens</h3>
+            <p>We clean before or after your working hours, so your team walks into a fresh space.</p>
+            <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Office cleaning" href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> <span>Ask<span class="label-long"> about this</span> on WhatsApp</span><span class="visually-hidden">: before the office opens</span></a>
+          </article>
+          <article class="moment-card">
+            <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-spark"/></svg></span>
+            <h3>Your home needs a full reset</h3>
+            <p>A top-to-bottom deep clean that reaches the corners everyday cleaning tends to miss.</p>
+            <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Deep cleaning" href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> <span>Ask<span class="label-long"> about this</span> on WhatsApp</span><span class="visually-hidden">: your home needs a full reset</span></a>
+          </article>
+          <article class="moment-card">
+            <span class="hex-badge-sm" aria-hidden="true"><svg><use href="#i-moon"/></svg></span>
+            <h3>Before Ramadan, Eid or a family visit</h3>
+            <p>Get the whole home guest-ready before the house fills up.</p>
+            <a class="btn btn-sm btn-wa-soft" data-wa-link data-wa-service="Deep cleaning" href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg> <span>Ask<span class="label-long"> about this</span> on WhatsApp</span><span class="visually-hidden">: before Ramadan, Eid or a family visit</span></a>
+          </article>
+        </div>
+
+        <div class="prep-card">
+          <div class="prep-head">
+            <h3>Before your deep clean: 5 things to prep</h3>
+            <p>A little preparation helps the team spend every minute on cleaning.</p>
+          </div>
+          <div class="prep-body">
+            <ol class="prep-list">
+              <li><strong>Clear surfaces and floors.</strong> Put away personal items so the team can reach every corner.</li>
+              <li><strong>Note your focus areas.</strong> Walk through your space and send us anything you want extra attention on.</li>
+              <li><strong>Share access details.</strong> Building entry, parking, and any lift booking or gate pass your community needs.</li>
+              <li><strong>Mention special care.</strong> Tell us about pets, fragile items, or surfaces that need gentle handling.</li>
+              <li><strong>Choose your materials.</strong> Our team brings professional-grade supplies, or we can use yours if you prefer.</li>
+            </ol>
+            <p class="prep-close">Ready when you are. <a data-wa-link data-wa-service="Deep cleaning" href="#contact">Send your checklist notes on WhatsApp</a></p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============ WHY US ============ -->
     <section class="section panel" id="why" aria-labelledby="why-title">
-      <div class="container why-layout">
-        <div class="why-intro">
-          <p class="kicker">Why choose Bee Thrive</p>
-          <h2 id="why-title">A cleaning partner you can rely on</h2>
-          <p>We are a brand of Digital Thrive Cleaning Services Co LLC, holding Trade Licence No. 1416022 from the Dubai Department of Economy and Tourism. Transparent, competitive rates with no hidden fees, and supervision included on every visit.</p>
-          <div class="why-gallery">
-            <img src="assets/work-windows-1.jpg" alt="Bee Thrive cleaner detailing tall office glass in Dubai" width="958" height="1280" loading="lazy" />
-            <img src="assets/work-office.jpg" alt="A bright, freshly cleaned office in Dubai after a Bee Thrive visit" width="1280" height="958" loading="lazy" />
-            <img src="assets/work-restroom.jpg" alt="A spotless, sanitised restroom cleaned by Bee Thrive" width="958" height="1280" loading="lazy" />
+      <div class="container">
+        <div class="why-layout">
+          <div class="why-intro">
+            <header class="section-head section-head-left">
+              <p class="kicker">Why choose Bee Thrive</p>
+              <h2 id="why-title">Why Bee Thrive is Dubai's best-supervised cleaning team</h2>
+              <p class="section-intro">Bee Thrive Cleaning Services is a brand of Digital Thrive Cleaning Services Co LLC, a licensed Dubai company established in October 2024. What sets us apart is simple: every job is checked by a supervisor, and you never pay extra for it.</p>
+            </header>
+            <div class="why-photo">
+              <img src="assets/work-windows-1.jpg" alt="A uniformed Bee Thrive cleaner detailing a corner office window in Dubai" width="958" height="1280" loading="lazy" />
+            </div>
+          </div>
+          <ol class="why-cards">
+            <li class="why-card">
+              <span class="hex-num" aria-hidden="true">01</span>
+              <h3>Licensed and accountable</h3>
+              <p>Trade Licence No. 1416022 from the Dubai Department of Economy and Tourism. A registered company that stands behind every job.</p>
+              <span class="why-meta">Established October 2024</span>
+            </li>
+            <li class="why-card">
+              <span class="hex-num" aria-hidden="true">02</span>
+              <h3>A supervisor on every job, free</h3>
+              <p>A supervisor checks the work so the standard stays consistent, visit after visit. It is never added to your quote.</p>
+            </li>
+            <li class="why-card">
+              <span class="hex-num" aria-hidden="true">03</span>
+              <h3>A vetted, trained team</h3>
+              <p>Every team member is screened and trained, and treats your home or workplace with respect.</p>
+            </li>
+            <li class="why-card">
+              <span class="hex-num" aria-hidden="true">04</span>
+              <h3>Fully equipped, or your supplies</h3>
+              <p>We bring professional-grade equipment and materials. Prefer your own? We will use them and adjust your quote.</p>
+            </li>
+            <li class="why-card">
+              <span class="hex-num" aria-hidden="true">05</span>
+              <h3>Plans that fit your week</h3>
+              <p>Hourly, monthly or yearly plans, six days a week, with better rates for regular visits.</p>
+            </li>
+            <li class="why-card">
+              <span class="hex-num" aria-hidden="true">06</span>
+              <h3>A clear quote, no hidden fees</h3>
+              <p>You know what you are paying before we start. No surprises on the day.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="why-standard">
+          <div class="standard-loop">
+            <h3>The Bee Thrive standard</h3>
+            <ol class="loop-list">
+              <li class="hex-node">
+                <span class="hex-num" aria-hidden="true">1</span>
+                <strong>A vetted team cleans.</strong>
+                <span>Fully equipped and on time.</span>
+              </li>
+              <li class="hex-node">
+                <span class="hex-num" aria-hidden="true">2</span>
+                <strong>A supervisor checks.</strong>
+                <span>Every job, at no extra cost.</span>
+              </li>
+              <li class="hex-node">
+                <span class="hex-num" aria-hidden="true">3</span>
+                <strong>You approve the result.</strong>
+                <span>Not right? Tell us within 24 hours and we return to re-clean it, free.</span>
+              </li>
+            </ol>
+          </div>
+          <div class="promise-card">
+            <svg class="promise-seal" aria-hidden="true" focusable="false"><use href="#i-seal"/></svg>
+            <div>
+              <h3>Love the result, guaranteed</h3>
+              <p>We supervise every job so the standard stays high. If any area is not right, tell us within 24 hours and we return to re-clean it at no cost.</p>
+            </div>
           </div>
         </div>
-        <ul class="why-list">
-          <li><span class="hex-check" aria-hidden="true"></span><div><strong>A licensed Dubai company</strong><span>Trade Licence No. 1416022, Department of Economy and Tourism. Not an informal arrangement, a real business that stands behind its work.</span></div></li>
-          <li><span class="hex-check" aria-hidden="true"></span><div><strong>A vetted, trained team</strong><span>Screened, professional, and respectful of your space and your time.</span></div></li>
-          <li><span class="hex-check" aria-hidden="true"></span><div><strong>Free on-site supervision, every job</strong><span>A supervisor checks the work so the standard is consistent, at no extra cost.</span></div></li>
-          <li><span class="hex-check" aria-hidden="true"></span><div><strong>Professional-grade equipment and materials</strong><span>The right tools for a result you can see and feel.</span></div></li>
-          <li><span class="hex-check" aria-hidden="true"></span><div><strong>Clear pricing, no hidden fees</strong><span>You always know what you are paying before we start.</span></div></li>
-          <li><span class="hex-check" aria-hidden="true"></span><div><strong>Flexible scheduling</strong><span>Hourly, monthly, or yearly, six days a week, around your life and your business.</span></div></li>
-          <li><span class="hex-check" aria-hidden="true"></span><div><strong>Wide coverage</strong><span>Homes and offices from Dubai to Sharjah, and projects and events across all Emirates.</span></div></li>
-        </ul>
-      </div>
-    </section>
 
-    <!-- ============ HOW IT WORKS ============ -->
-    <section class="section panel" id="how" aria-labelledby="how-title">
-      <div class="container">
-        <header class="section-head">
-          <p class="kicker">The plan</p>
-          <h2 id="how-title">Booking takes minutes</h2>
-        </header>
-        <ol class="steps">
-          <li class="step">
-            <span class="step-num" aria-hidden="true">1</span>
-            <h3>Tell us what you need</h3>
-            <p>Message us on WhatsApp or call. Share your space, location, and preferred time.</p>
-          </li>
-          <li class="step">
-            <span class="step-num" aria-hidden="true">2</span>
-            <h3>We arrive and clean</h3>
-            <p>A supervised team shows up on time, fully equipped, and gets every detail right.</p>
-          </li>
-          <li class="step">
-            <span class="step-num" aria-hidden="true">3</span>
-            <h3>You enjoy the result</h3>
-            <p>Walk into a fresh, spotless space and get back to what matters.</p>
-          </li>
-        </ol>
-        <div class="steps-cta">
-          <a class="btn btn-primary" data-wa-link href="#contact">Start with a free quote</a>
+        <div class="cta-pair">
+          <div class="cta-buttons">
+            <a class="btn btn-primary" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              Book a supervised clean
+            </a>
+            <a class="btn btn-ghost" data-call-primary href="#contact">
+              <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              Call +971 56 846 2872
+            </a>
+          </div>
+          <p class="cta-micro">Free quote · No obligation · Replies on WhatsApp</p>
         </div>
       </div>
     </section>
 
     <!-- ============ SHOWREEL ============ -->
-    <section class="section panel reel-section" id="showreel" aria-labelledby="showreel-title">
+    <section class="section on-canvas reel-section" id="showreel" aria-labelledby="showreel-title">
       <div class="container reel-layout">
         <div class="reel-copy">
-          <p class="kicker">Services showreel</p>
+          <p class="kicker">Real jobs, filmed on site</p>
           <h2 id="showreel-title">See the Bee Thrive standard in motion</h2>
-          <p>Watch a quick field reel of the team at work. It gives home clients, holiday-home hosts, office managers, and project teams a clear feel for the care, supervision, and finish we bring to every clean.</p>
+          <p>No stock footage. This is the team at work on real jobs, so homeowners, holiday-home hosts, office managers and project teams can see the care and supervision we bring to every clean.</p>
           <ul class="reel-points">
             <li><span class="hex-check" aria-hidden="true"></span> Home, office, holiday-home, and deep-cleaning support</li>
             <li><span class="hex-check" aria-hidden="true"></span> Post-construction turnover for villas and commercial buildings</li>
             <li><span class="hex-check" aria-hidden="true"></span> Serving Dubai and Sharjah, with all-Emirates support for projects</li>
           </ul>
           <div class="reel-actions">
-            <a class="btn btn-primary" data-wa-link href="#contact">Book this level of clean</a>
+            <a class="btn btn-primary" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              Book this level of clean
+            </a>
             <a class="btn btn-ghost" href="#services">View services</a>
           </div>
         </div>
-        <div class="reel-card" aria-label="Bee Thrive services showreel">
+        <div class="reel-card" role="group" aria-label="Bee Thrive services showreel">
           <div class="reel-phone">
             <video
               controls
               muted
               playsinline
-              preload="metadata"
+              preload="none"
               poster="assets/showreel-main-poster.jpg"
               aria-label="Bee Thrive Cleaning Services main team showreel in Dubai and Sharjah"
             >
@@ -340,7 +858,7 @@
             <strong>Real work, supervised finish</strong>
           </div>
         </div>
-        <div class="reel-clips" aria-label="Bee Thrive service reel clips">
+        <div class="reel-clips" role="group" aria-label="Bee Thrive service reel clips">
           <article class="reel-mini">
             <video controls muted playsinline preload="none" poster="assets/showreel-office-poster.jpg" aria-label="Bee Thrive office cleaning service reel">
               <source src="assets/showreel-office.mp4" type="video/mp4" />
@@ -369,50 +887,63 @@
       </div>
     </section>
 
-    <!-- ============ PRICING ============ -->
-    <section class="section panel" id="pricing" aria-labelledby="pricing-title">
+    <!-- ============ SERVICE AREAS ============ -->
+    <section class="section panel panel-honey" id="areas" aria-labelledby="areas-title">
       <div class="container">
         <header class="section-head">
-          <p class="kicker">Tailored quotes</p>
-          <h2 id="pricing-title">A clear quote for your space</h2>
-          <p class="section-intro">Every job is different. Share your space, schedule, and service needs, and we will prepare a transparent quote with no hidden fees.</p>
+          <p class="kicker">Where we clean</p>
+          <h2 id="areas-title">Areas we clean across Dubai and Sharjah</h2>
+          <p class="section-intro">Normal and deep cleaning across Dubai mainland through to Sharjah. Projects and events across all Emirates. Tap your area to ask about a clean there on WhatsApp.</p>
         </header>
 
-        <div class="price-table-wrap">
-          <table class="price-table">
-            <caption class="visually-hidden">How Bee Thrive cleaning quotes are prepared</caption>
-            <thead>
-              <tr><th scope="col">Service</th><th scope="col">Quote based on</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Service">Normal cleaning</td><td data-label="Quote based on">Visit length, materials, and schedule. Minimum 2 hours.</td></tr>
-              <tr><td data-label="Service">Deep cleaning</td><td data-label="Quote based on">Property size, condition, and cleaning scope.</td></tr>
-              <tr><td data-label="Service">Move-in and move-out</td><td data-label="Quote based on">Property size and handover requirements.</td></tr>
-              <tr><td data-label="Service">Packing and unpacking</td><td data-label="Quote based on">Volume, access, and scope.</td></tr>
-              <tr><td data-label="Service">Holiday home cleaning</td><td data-label="Quote based on">Size, amenities, linen, and turnover needs.</td></tr>
-              <tr><td data-label="Service">Post-construction turnover</td><td data-label="Quote based on">Building size, site condition, and project scope.</td></tr>
-              <tr><td data-label="Service">Projects and events</td><td data-label="Quote based on">Team size, timing, and scope of work.</td></tr>
-            </tbody>
-          </table>
+        <div class="area-groups">
+          <div class="area-group area-group-main">
+            <h3>Dubai</h3>
+            <ul class="area-chips">
+              <li><a class="area-chip" data-wa-link data-wa-area="Deira" data-area="Deira" data-emirate="Dubai" href="#contact">Deira</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Bur Dubai" data-area="Bur Dubai" data-emirate="Dubai" href="#contact">Bur Dubai</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Downtown Dubai" data-area="Downtown Dubai" data-emirate="Dubai" href="#contact">Downtown Dubai</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Business Bay" data-area="Business Bay" data-emirate="Dubai" href="#contact">Business Bay</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Dubai Marina" data-area="Dubai Marina" data-emirate="Dubai" href="#contact">Dubai Marina</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="JLT" data-area="JLT" data-emirate="Dubai" href="#contact">JLT</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Al Barsha" data-area="Al Barsha" data-emirate="Dubai" href="#contact">Al Barsha</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Jumeirah" data-area="Jumeirah" data-emirate="Dubai" href="#contact">Jumeirah</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Al Nahda" data-area="Al Nahda" data-emirate="Dubai" href="#contact">Al Nahda</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Dubai Silicon Oasis" data-area="Dubai Silicon Oasis" data-emirate="Dubai" href="#contact">Dubai Silicon Oasis</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="International City" data-area="International City" data-emirate="Dubai" href="#contact">International City</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Mirdif" data-area="Mirdif" data-emirate="Dubai" href="#contact">Mirdif</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Al Qusais" data-area="Al Qusais" data-emirate="Dubai" href="#contact">Al Qusais</a></li>
+              <li><a class="area-chip" data-wa-link data-wa-area="Dubai Hills" data-area="Dubai Hills" data-emirate="Dubai" href="#contact">Dubai Hills</a></li>
+            </ul>
+          </div>
+          <div class="area-group">
+            <h3>Sharjah</h3>
+            <ul class="area-chips">
+              <li><a class="area-chip" data-wa-link data-wa-area="Sharjah" data-area="Sharjah" data-emirate="Sharjah" href="#contact">Sharjah</a></li>
+            </ul>
+          </div>
+          <div class="area-group">
+            <h3>Across the UAE</h3>
+            <ul class="area-chips">
+              <li><a class="area-chip area-chip-honey" data-wa-link data-wa-area="All Emirates, project or event" data-area="All Emirates" data-emirate="UAE" href="#contact">All Emirates for projects and events</a></li>
+            </ul>
+          </div>
         </div>
-        <p class="price-note">Booking a regular plan? Ask about monthly and yearly rates for better value.</p>
-        <div class="price-cta">
-          <a class="btn btn-primary" data-wa-link href="#contact">Request a quote on WhatsApp</a>
-        </div>
-      </div>
-    </section>
+        <p class="area-ask-wrap"><a class="area-ask" data-wa-link data-wa-area="Not listed, please confirm" href="#contact">Don't see your area? Ask us on WhatsApp</a></p>
 
-    <!-- ============ PROMISE / RISK REVERSAL ============ -->
-    <section class="section on-canvas" aria-labelledby="promise-title">
-      <div class="container container-narrow">
-        <div class="promise">
-          <span class="promise-seal" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3-.3 1 2.8 2.6 1.5-.7 2.9.7 2.9-2.6 1.5-1 2.8-3-.3L12 22l-2.4-1.8-3 .3-1-2.8L3 16.5l.7-2.9L3 10.7l2.6-1.5 1-2.8 3 .3L12 2z" fill="#F4A300"/><path d="M10.4 14.6l-2.1-2.1-1.3 1.3 3.4 3.4 6-6-1.3-1.3z" fill="#1B1A17"/></svg>
-          </span>
-          <p class="kicker">Our promise to you</p>
-          <h2 id="promise-title">Love the result, guaranteed</h2>
-          <p>We supervise every job so the standard stays high. If any area is not right, tell us within 24 hours and we return to re-clean it at no cost. That is our promise to you.</p>
-          <a class="btn btn-primary" data-wa-link href="#contact">Book with confidence</a>
+        <div class="band">
+          <p class="band-line">Choosing a cleaning company in Dubai? Choose one that checks its own work.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              <span><span class="label-long">Get my free</span><span class="label-short">Free</span> quote on WhatsApp</span>
+            </a>
+            <a class="btn btn-ghost-light" data-call-primary href="#contact">
+              <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              Call +971 56 846 2872
+            </a>
+          </div>
+          <p class="cta-micro">Licensed · Free supervisor on every job · 24-hour re-clean promise</p>
         </div>
       </div>
     </section>
@@ -422,29 +953,51 @@
       <div class="container">
         <header class="section-head section-head-light">
           <p class="kicker">Verified reviews from Google</p>
-          <h2 id="reviews-title">Trusted by clients across the UAE</h2>
+          <h2 id="reviews-title">Google reviews from our clients</h2>
+          <p class="section-intro">Real clients in their own words, exactly as they wrote them on Google.</p>
         </header>
+
+        <figure class="review-feature">
+          <span class="review-mark" aria-hidden="true">&ldquo;</span>
+          <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>The best cleaning company so far I have experienced in UAE.</blockquote>
+          <figcaption>Nikki Zaballerro <span class="review-source">Google review</span></figcaption>
+        </figure>
+
         <div class="review-grid">
           <figure class="review-card">
             <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>The team was professional, thorough, and left my place spotless. They paid attention to every detail and went above and beyond my expectations.</blockquote>
-            <figcaption>Attaullah UT</figcaption>
+            <figcaption>Attaullah UT <span class="review-source">Google review</span></figcaption>
           </figure>
           <figure class="review-card">
             <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>The team arrived right on time, fully equipped, and got to work immediately. They were extremely professional and respectful of my space.</blockquote>
-            <figcaption>Huda Mawaleed</figcaption>
+            <figcaption>Huda Mawaleed <span class="review-source">Google review</span></figcaption>
           </figure>
           <figure class="review-card">
             <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>Very professional and friendly staff. Fast and efficient. Even every nook and cranny of my apartment was cleaned. Will highly recommend.</blockquote>
-            <figcaption>Russel Inocencio</figcaption>
+            <figcaption>Russel Inocencio <span class="review-source">Google review</span></figcaption>
           </figure>
-          <figure class="review-card">
-            <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>The best cleaning company so far I have experienced in UAE.</blockquote>
-            <figcaption>Nikki Zaballerro</figcaption>
-          </figure>
+        </div>
+
+        <div class="review-links">
+          <a class="btn btn-ghost-light" data-maps href="#">Read our reviews on Google</a>
+          <a class="btn btn-ghost-light" data-review-link href="#">Leave us a review</a>
+        </div>
+
+        <div class="cta-pair cta-pair-dark">
+          <div class="cta-buttons">
+            <a class="btn btn-primary" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              <span><span class="label-long">Get the same standard for your space</span><span class="label-short">Book the same standard</span></span>
+            </a>
+            <a class="btn btn-ghost-light" data-call-primary href="#contact">
+              <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              Call +971 56 846 2872
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -461,9 +1014,7 @@
         <!-- Holiday Homes -->
         <div class="clients-group">
           <div class="clients-subhead">
-            <span class="hex-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 11h18v2H3zm2 3h14v6h-2v-2H7v2H5v-6zm3-9h8a3 3 0 013 3v2H5V8a3 3 0 013-3z"/></svg>
-            </span>
+            <span class="hex-badge" aria-hidden="true"><svg><use href="#i-holiday"/></svg></span>
             <h3>Holiday homes</h3>
           </div>
           <div class="client-grid">
@@ -478,9 +1029,7 @@
         <!-- Offices -->
         <div class="clients-group">
           <div class="clients-subhead">
-            <span class="hex-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13h-6v-6H9v6H3z"/></svg>
-            </span>
+            <span class="hex-badge" aria-hidden="true"><svg><use href="#i-business"/></svg></span>
             <h3>Offices</h3>
           </div>
           <div class="client-grid">
@@ -498,9 +1047,7 @@
         <!-- Projects -->
         <div class="clients-group">
           <div class="clients-subhead">
-            <span class="hex-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 3h14a1 1 0 011 1v16l-8-4.5L4 20V4a1 1 0 011-1z"/></svg>
-            </span>
+            <span class="hex-badge" aria-hidden="true"><svg><use href="#i-flag"/></svg></span>
             <h3>Projects and events</h3>
           </div>
           <div class="client-grid">
@@ -509,23 +1056,76 @@
             <article class="client-card"><span class="client-mono" aria-hidden="true">IE</span><span class="client-name">Identity Events LLC</span></article>
           </div>
         </div>
+
+        <p class="cta-micro clients-cta">Run holiday homes, an office or events? <a data-wa-link data-wa-service="Business cleaning quote" href="#contact">Request a business quote</a></p>
       </div>
     </section>
 
-    <!-- ============ SERVICE AREAS ============ -->
-    <section class="section on-canvas" id="areas" aria-labelledby="areas-title">
+    <!-- ============ HOW IT WORKS + HOW QUOTES WORK ============ -->
+    <section class="section on-canvas" id="how" aria-labelledby="how-title">
       <div class="container">
         <header class="section-head">
-          <p class="kicker">Where we clean</p>
-          <h2 id="areas-title">Serving Dubai, reaching across the Emirates</h2>
-          <p class="section-intro">Normal and deep cleaning across Dubai mainland through to Sharjah. Projects and events across all Emirates. Not sure if we reach you? Send a message and we will confirm right away.</p>
+          <p class="kicker">The plan</p>
+          <h2 id="how-title">How booking works</h2>
+          <p class="section-intro">From first message to a spotless space, with a supervisor checking along the way.</p>
         </header>
-        <ul class="area-chips">
-          <li>Deira</li><li>Bur Dubai</li><li>Downtown Dubai</li><li>Business Bay</li>
-          <li>Dubai Marina</li><li>JLT</li><li>Al Barsha</li><li>Jumeirah</li>
-          <li>Al Nahda</li><li>Dubai Silicon Oasis</li><li>International City</li><li>Mirdif</li>
-          <li>Al Qusais</li><li>Dubai Hills</li><li>Sharjah</li><li>All Emirates for projects</li>
-        </ul>
+        <ol class="steps">
+          <li class="step">
+            <span class="hex-num" aria-hidden="true">1</span>
+            <h3>Message us your space and time</h3>
+            <p>WhatsApp, call, or use the form below. Share your space, area and preferred date.</p>
+          </li>
+          <li class="step">
+            <span class="hex-num" aria-hidden="true">2</span>
+            <h3>Get a clear quote</h3>
+            <p>We confirm the scope and your quote before anything starts, with no hidden fees.</p>
+          </li>
+          <li class="step">
+            <span class="hex-num" aria-hidden="true">3</span>
+            <h3>A supervised team arrives</h3>
+            <p>On time and fully equipped, ready to get every detail right.</p>
+          </li>
+          <li class="step">
+            <span class="hex-num" aria-hidden="true">4</span>
+            <h3>Check the result</h3>
+            <p>Not right? Tell us within 24 hours and we return to re-clean it, free.</p>
+          </li>
+        </ol>
+
+        <div class="quote-factors" id="quote">
+          <span id="pricing" class="anchor-alias" aria-hidden="true"></span>
+          <h3>How your quote is worked out</h3>
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <caption class="visually-hidden">How Bee Thrive cleaning quotes are prepared</caption>
+              <thead>
+                <tr><th scope="col">Service</th><th scope="col">Quote based on</th></tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Service">Normal cleaning</td><td data-label="Quote based on">Visit length, materials, and schedule. Minimum 2 hours.</td></tr>
+                <tr><td data-label="Service">Deep cleaning</td><td data-label="Quote based on">Property size, condition, and cleaning scope.</td></tr>
+                <tr><td data-label="Service">Move-in and move-out</td><td data-label="Quote based on">Property size and handover requirements.</td></tr>
+                <tr><td data-label="Service">Packing and unpacking</td><td data-label="Quote based on">Volume, access, and scope.</td></tr>
+                <tr><td data-label="Service">Holiday home cleaning</td><td data-label="Quote based on">Size, amenities, linen, and turnover needs.</td></tr>
+                <tr><td data-label="Service">Post-construction turnover</td><td data-label="Quote based on">Building size, site condition, and project scope.</td></tr>
+                <tr><td data-label="Service">Projects and events</td><td data-label="Quote based on">Team size, timing, and scope of work.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="quote-ticks">
+            <li><span class="hex-check" aria-hidden="true"></span> Your quote agreed before we start</li>
+            <li><span class="hex-check" aria-hidden="true"></span> No hidden fees</li>
+            <li><span class="hex-check" aria-hidden="true"></span> Supervision included at no extra cost</li>
+          </ul>
+          <p class="price-note">Booking a regular plan? Ask about monthly and yearly rates for better value.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" href="#contact" data-focus-form>Start my free quote</a>
+            <a class="btn btn-ghost" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              Ask on WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -534,50 +1134,95 @@
       <div class="container contact-layout">
         <div class="contact-form-col">
           <p class="kicker">Book or get a quote</p>
-          <h2 id="contact-title">Quick quote, fast reply</h2>
-          <p class="section-intro">Fill in a few details and we will open WhatsApp with your message ready to send. No account, no backend, just a quick chat.</p>
+          <h2 id="contact-title">Get a free cleaning quote</h2>
+          <p class="section-intro">Share a few details and we will open WhatsApp with your message ready to send. No sign-up needed on this site.</p>
 
           <form id="booking-form" class="booking-form" novalidate>
             <div class="field">
               <label for="bf-name">Name</label>
               <input id="bf-name" name="name" type="text" autocomplete="name" required />
+              <p class="field-error" id="bf-name-err" hidden>Please add your name so we know who to reply to.</p>
             </div>
             <div class="field">
               <label for="bf-phone">Phone</label>
-              <input id="bf-phone" name="phone" type="tel" autocomplete="tel" placeholder="+971 5x xxx xxxx" required />
+              <input id="bf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+971 5x xxx xxxx" aria-describedby="bf-phone-hint" required />
+              <p class="field-hint" id="bf-phone-hint">UAE mobile. We will reply on WhatsApp.</p>
+              <p class="field-error" id="bf-phone-err" hidden>Please add a phone number we can reach you on, starting +971 or 05.</p>
             </div>
             <div class="field">
               <label for="bf-service">Service</label>
               <select id="bf-service" name="service" required>
                 <option value="" selected disabled>Choose a service</option>
-                <option>Normal cleaning (home)</option>
-                <option>Deep cleaning</option>
-                <option>Office or commercial cleaning</option>
-                <option>Move-in / move-out</option>
-                <option>Post-construction turnover</option>
-                <option>Airbnb / holiday home</option>
-                <option>Laundry and ironing</option>
-                <option>Carpet cleaning</option>
-                <option>Packing and unpacking</option>
-                <option>Nanny or maid services</option>
-                <option>Project or event</option>
-                <option>Something else</option>
+                <optgroup label="Homes">
+                  <option>Normal home cleaning</option>
+                  <option>Deep cleaning</option>
+                  <option>Move-in and move-out cleaning</option>
+                  <option>Post-construction villa turnover</option>
+                  <option>Laundry and ironing</option>
+                  <option>Carpet cleaning</option>
+                  <option>Maid services</option>
+                </optgroup>
+                <optgroup label="Businesses">
+                  <option>Office cleaning</option>
+                  <option>Shops and retail cleaning</option>
+                  <option>Clinics and cafes cleaning</option>
+                  <option>Restaurant and cafeteria deep cleaning</option>
+                  <option>Warehouse cleaning</option>
+                  <option>Post-construction commercial turnover</option>
+                  <option>Window and glass cleaning</option>
+                  <option>Office support staff</option>
+                  <option>Projects and events</option>
+                </optgroup>
+                <optgroup label="Holiday homes">
+                  <option>Airbnb and holiday home cleaning</option>
+                  <option>Turnover cleaning between guests</option>
+                </optgroup>
+                <optgroup label="Moves and support">
+                  <option>Packing and unpacking</option>
+                  <option>Nanny and babysitter services</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option>Something else</option>
+                </optgroup>
               </select>
+              <p class="field-error" id="bf-service-err" hidden>Please choose a service, or pick Something else.</p>
             </div>
             <div class="field">
               <label for="bf-area">Area (Dubai or Sharjah)</label>
-              <input id="bf-area" name="area" type="text" placeholder="e.g. Deira, Dubai" />
+              <input id="bf-area" name="area" type="text" list="area-list" autocomplete="off" placeholder="e.g. Deira, Dubai" />
+              <datalist id="area-list"></datalist>
+            </div>
+            <fieldset class="field field-full radio-chips">
+              <legend>Property type (optional)</legend>
+              <div class="radio-chip-row">
+                <input type="radio" id="bf-prop-apartment" name="property" value="Apartment" /><label for="bf-prop-apartment">Apartment</label>
+                <input type="radio" id="bf-prop-villa" name="property" value="Villa" /><label for="bf-prop-villa">Villa</label>
+                <input type="radio" id="bf-prop-office" name="property" value="Office" /><label for="bf-prop-office">Office</label>
+                <input type="radio" id="bf-prop-shop" name="property" value="Shop or restaurant" /><label for="bf-prop-shop">Shop or restaurant</label>
+                <input type="radio" id="bf-prop-holiday" name="property" value="Holiday home" /><label for="bf-prop-holiday">Holiday home</label>
+                <input type="radio" id="bf-prop-other" name="property" value="Other" /><label for="bf-prop-other">Other</label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="bf-date">Preferred date (optional)</label>
+              <input id="bf-date" name="date" type="date" />
+            </div>
+            <div class="field">
+              <label for="bf-size">Property size (optional)</label>
+              <input id="bf-size" name="size" type="text" placeholder="e.g. 2 bedrooms, or 1,500 sq ft" />
             </div>
             <div class="field field-full">
-              <label for="bf-message">Details</label>
-              <textarea id="bf-message" name="message" rows="3" placeholder="Size of space, preferred date and time, any special requests"></textarea>
+              <label for="bf-message">Notes</label>
+              <textarea id="bf-message" name="message" rows="3" placeholder="Anything we should know: focus areas, access, pets, or your preferred time"></textarea>
             </div>
             <div class="field-full form-actions">
               <button type="submit" class="btn btn-whatsapp btn-block">
-                <svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.2 1.1 1.1-4.1-.3-.4a10 10 0 01-1.6-5.5c0-5.6 4.6-10.2 10.5-10.2S26.5 9.9 26.5 15.5 21.9 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.4-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+                <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
                 Send on WhatsApp
               </button>
-              <p class="form-hint">This opens WhatsApp with your details ready to send.</p>
+              <p class="form-hint">Opens WhatsApp with your details ready. No sign-up on this site.</p>
+              <p class="form-alt">Prefer email? <a data-email data-form-email href="#">Email sales.operations@<wbr>beethrivecleaning.com</a> or <a data-email-secondary data-form-email href="#">digitalthrivefm@<wbr>gmail.com</a></p>
+              <p id="bf-status" class="form-status" role="status" aria-live="polite"></p>
             </div>
           </form>
         </div>
@@ -611,8 +1256,8 @@
                 </span>
                 <div>
                   <span class="info-label">Email</span>
-                  <a data-email href="#">sales.operations@beethrivecleaning.com</a>
-                  <a data-email-secondary href="#">digitalthrivefm@gmail.com</a>
+                  <a data-email href="#">sales.operations@<wbr>beethrivecleaning.com</a>
+                  <a data-email-secondary href="#">digitalthrivefm@<wbr>gmail.com</a>
                 </div>
               </li>
               <li>
@@ -630,8 +1275,16 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 1.8.25 2.2.41.6.22 1 .48 1.4.9.42.4.68.8.9 1.4.16.4.35 1 .41 2.2.07 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 1.8-.41 2.2-.22.6-.48 1-.9 1.4-.4.42-.8.68-1.4.9-.4.16-1 .35-2.2.41-1.2.07-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-1.8-.25-2.2-.41a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.16-.4-.35-1-.41-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.25-1.8.41-2.2.22-.6.48-1 .9-1.4.4-.42.8-.68 1.4-.9.4-.16 1-.35 2.2-.41C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.3-.28.8-.32 1.7C3.2 8.5 3.2 8.9 3.2 12s0 3.5.07 4.7c.04.9.2 1.4.32 1.7.17.43.37.74.69 1.06.32.32.63.52 1.06.69.3.12.8.28 1.7.32 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.3.28-.8.32-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.04-.9-.2-1.4-.32-1.7a2.8 2.8 0 00-.69-1.06 2.8 2.8 0 00-1.06-.69c-.3-.12-.8-.28-1.7-.32C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-3.2a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg>
               </a>
               <a data-facebook href="#" aria-label="Bee Thrive on Facebook">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.300c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.45 2.9h-2.35v7A10 10 0 0022 12z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.45 2.9h-2.35v7A10 10 0 0022 12z"/></svg>
               </a>
+            </div>
+          </div>
+
+          <div class="promise-mini">
+            <svg class="promise-seal" aria-hidden="true" focusable="false"><use href="#i-seal"/></svg>
+            <div>
+              <h3>Our 24-hour promise</h3>
+              <p>Every job is supervised. If any area is not right, tell us within 24 hours and we return to re-clean it at no cost.</p>
             </div>
           </div>
 
@@ -651,32 +1304,74 @@
       <div class="container container-narrow">
         <header class="section-head">
           <p class="kicker">Good to know</p>
-          <h2 id="faq-title">Frequently asked questions</h2>
+          <h2 id="faq-title">Cleaning questions, answered</h2>
         </header>
         <div class="faq" id="faq-list">
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Do you bring your own equipment and products?<span class="faq-icon" aria-hidden="true"></span></button>
+            <h3 class="faq-h"><button type="button" class="faq-q">Is Bee Thrive a licensed company?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a"><p>Yes. Bee Thrive Cleaning Services is a brand of Digital Thrive Cleaning Services Co LLC, holding Trade Licence No. 1416022 from the Dubai Department of Economy and Tourism.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-h"><button type="button" class="faq-q">Is the on-site supervision really free?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a"><p>Yes. A supervisor checks the work on every job so the standard stays consistent, and it is never added to your quote.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-h"><button type="button" class="faq-q">How is my quote worked out?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a"><p>We look at the size and condition of your space, the scope of work, and your schedule. Normal cleaning has a minimum visit of 2 hours. You agree your quote before we start, with no hidden fees.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-h"><button type="button" class="faq-q">Do you bring your own equipment and products?<span class="faq-icon" aria-hidden="true"></span></button></h3>
             <div class="faq-a"><p>Yes. Our team arrives fully equipped with professional-grade materials. Prefer we use your own supplies? Just let us know, and we will tailor your quote accordingly.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Are your cleaners vetted and trusted?<span class="faq-icon" aria-hidden="true"></span></button>
+            <h3 class="faq-h"><button type="button" class="faq-q">Are your cleaners vetted and trusted?<span class="faq-icon" aria-hidden="true"></span></button></h3>
             <div class="faq-a"><p>Every member of our team is screened and trained, and a supervisor oversees each job. You can welcome them into your home or office with confidence.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How quickly can you come?<span class="faq-icon" aria-hidden="true"></span></button>
+            <h3 class="faq-h"><button type="button" class="faq-q">How quickly can you come?<span class="faq-icon" aria-hidden="true"></span></button></h3>
             <div class="faq-a"><p>We work six days a week with flexible scheduling. Message us with your preferred time and we will confirm the soonest slot available.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What areas do you cover?<span class="faq-icon" aria-hidden="true"></span></button>
+            <h3 class="faq-h"><button type="button" class="faq-q">What areas do you cover?<span class="faq-icon" aria-hidden="true"></span></button></h3>
             <div class="faq-a"><p>Homes and offices from Dubai to Sharjah, and projects and events across all Emirates. Send your location and we will confirm.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What if I am not happy with the clean?<span class="faq-icon" aria-hidden="true"></span></button>
+            <h3 class="faq-h"><button type="button" class="faq-q">What if I am not happy with the clean?<span class="faq-icon" aria-hidden="true"></span></button></h3>
             <div class="faq-a"><p>Tell us within 24 hours and we return to re-clean the area at no cost. Your satisfaction guides everything we do.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Do you offer regular contracts?<span class="faq-icon" aria-hidden="true"></span></button>
+            <h3 class="faq-h"><button type="button" class="faq-q">Do you clean in Sharjah?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a"><p>Yes. We clean homes and offices from Dubai to Sharjah, and take on projects and events across all Emirates. Send your area on WhatsApp and we will confirm.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-h"><button type="button" class="faq-q">Can you handle post-construction and handover cleaning?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a"><p>Yes. We handle post-construction turnover for villas and commercial buildings, and move-in and move-out deep cleaning that meets handover standards.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-h"><button type="button" class="faq-q">Do you work with holiday homes and Airbnb hosts?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a"><p>Yes. We offer guest-ready cleaning and fast turnovers between stays, with an optional linen and towel service. Holiday-home operators including MSH Holiday Homes and Crescent Holiday Homes are among our clients.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-h"><button type="button" class="faq-q">Can you clean our office or shop outside working hours?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a"><p>Yes. Office and retail cleaning is done before or after your working or trading hours, and restaurant deep cleaning is done after hours.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-h"><button type="button" class="faq-q">Do you offer regular contracts?<span class="faq-icon" aria-hidden="true"></span></button></h3>
             <div class="faq-a"><p>Yes. We offer hourly, monthly, and yearly plans, with better rates for regular visits.</p></div>
+          </div>
+        </div>
+
+        <div class="cta-pair">
+          <p class="cta-line">Still have a question?</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" data-wa-link href="#contact">
+              <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+              Ask us on WhatsApp
+            </a>
+            <a class="btn btn-ghost" data-call-primary href="#contact">
+              <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              Call +971 56 846 2872
+            </a>
           </div>
         </div>
       </div>
@@ -689,12 +1384,21 @@
         <div class="o2"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="300" cy="300" rx="175" ry="285" stroke="rgba(252,252,252,0.30)" stroke-width="1.5" stroke-dasharray="2 9"/></svg></div>
       </div>
       <div class="container final-cta-inner">
-        <h2 id="final-title">Ready for a space that shines?</h2>
-        <p>Send a quick message and get your free quote today. A clean, calm home or workplace is closer than you think.</p>
+        <h2 id="final-title">Book Dubai's best-supervised clean today</h2>
+        <p>Send a quick message for your free quote. Homes and offices from Deira to Dubai Marina, across to Sharjah, and projects anywhere in the Emirates.</p>
         <div class="final-cta-actions">
-          <a class="btn btn-primary" data-wa-link href="#contact">Get your free quote on WhatsApp</a>
-          <a class="btn btn-ghost-light" data-call-primary href="#">Call +971 56 846 2872</a>
+          <a class="btn btn-primary" data-wa-link href="#contact">
+            <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+            <span><span class="label-long">Get my free</span><span class="label-short">Free</span> quote on WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost-light" data-call-primary href="#contact">Call +971 56 846 2872</a>
+          <a class="btn btn-ghost-light" data-call-secondary href="#contact">Call +971 56 509 1801</a>
         </div>
+        <ul class="final-ticks">
+          <li><span class="hex-check" aria-hidden="true"></span> Free quote</li>
+          <li><span class="hex-check" aria-hidden="true"></span> Supervisor on every job</li>
+          <li><span class="hex-check" aria-hidden="true"></span> 24-hour re-clean promise</li>
+        </ul>
       </div>
     </section>
 
@@ -706,11 +1410,11 @@
       <div class="footer-brand">
         <h2 class="visually-hidden">Bee Thrive Cleaning Services</h2>
         <a class="brand brand-footer" href="#top" aria-label="Bee Thrive Cleaning Services home">
-          <img src="assets/logo-mark@400.png" alt="Bee Thrive Cleaning Services logo" width="64" height="66" />
+          <img src="assets/logo-mark-128.png" srcset="assets/logo-mark-128.png 1x, assets/logo-mark@400.png 3x" alt="Bee Thrive Cleaning Services logo" width="64" height="66" loading="lazy" decoding="async" />
         </a>
         <p>Cleaning beyond expectations, delivered to your doorstep. A licensed cleaning company serving homes and businesses across Dubai and Sharjah.</p>
         <div class="footer-social">
-          <a data-instagram href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 1.8.25 2.2.41.6.22 1 .48 1.4.9.42.4.68.8.9 1.4.16.4.35 1 .41 2.2.07 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 1.8-.41 2.2-.22.6-.48 1-.9 1.4-.4.42-.8.68-1.4.9-.4.16-1 .35-2.2.41-1.2.07-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-1.8-.25-2.2-.41a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.16-.4-.35-1-.41-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.25-1.8.41-2.2.22-.6.48-1 .9-1.4.4-.42.8-.68 1.4-.9.4-.16 1-.35 2.2-.41C8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-3.2a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg></a>
+          <a data-instagram href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 1.8.25 2.2.41.6.22 1 .48 1.4.9.42.4.68.8.9 1.4.16.4.35 1 .41 2.2.07 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 1.8-.41 2.2-.22.6-.48 1-.9 1.4-.4.42-.8.68-1.4.9-.4.16-1 .35-2.2.41-1.2.07-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-1.8-.25-2.2-.41a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.9-1.4c-.16-.4-.35-1-.41-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.8c.06-1.2.25-1.8.41-2.2.22-.6.48-1 .9-1.4.4-.42.8-.68 1.4-.9.4-.16 1-.35 2.2-.41C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.3-.28.8-.32 1.7C3.2 8.5 3.2 8.9 3.2 12s0 3.5.07 4.7c.04.9.2 1.4.32 1.7.17.43.37.74.69 1.06.32.32.63.52 1.06.69.3.12.8.28 1.7.32 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.3.28-.8.32-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.04-.9-.2-1.4-.32-1.7a2.8 2.8 0 00-.69-1.06 2.8 2.8 0 00-1.06-.69c-.3-.12-.8-.28-1.7-.32C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 1.8a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zm5.1-3.2a1.15 1.15 0 110 2.3 1.15 1.15 0 010-2.3z"/></svg></a>
           <a data-facebook href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.45 2.9h-2.35v7A10 10 0 0022 12z"/></svg></a>
         </div>
       </div>
@@ -718,11 +1422,13 @@
         <h3>Explore</h3>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#why">Why us</a></li>
-          <li><a href="#how">How it works</a></li>
+          <li><a href="#moments">Book by moment</a></li>
+          <li><a href="#why">Why Bee Thrive</a></li>
           <li><a href="#showreel">Showreel</a></li>
-          <li><a href="#pricing">Quotes</a></li>
+          <li><a href="#areas">Areas</a></li>
           <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#quote">How quotes work</a></li>
+          <li><a href="#contact">Get a quote</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -731,8 +1437,8 @@
         <ul>
           <li><a data-call-primary href="#">+971 56 846 2872</a></li>
           <li><a data-call-secondary href="#">+971 56 509 1801</a></li>
-          <li><a data-email href="#">sales.operations@beethrivecleaning.com</a></li>
-          <li><a data-email-secondary href="#">digitalthrivefm@gmail.com</a></li>
+          <li><a data-email href="#">sales.operations@<wbr>beethrivecleaning.com</a></li>
+          <li><a data-email-secondary href="#">digitalthrivefm@<wbr>gmail.com</a></li>
           <li><a data-maps href="#">Deira, Dubai, UAE</a></li>
         </ul>
       </div>
@@ -747,15 +1453,28 @@
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>Bee Thrive Cleaning Services, a brand of Digital Thrive Cleaning Services Co LLC. Licensed Dubai cleaning company serving homes and businesses from Dubai to Sharjah. Trade Licence No. 1416022, Department of Economy and Tourism.</p>
+        <p>Bee Thrive Cleaning Services, a brand of Digital Thrive Cleaning Services Co LLC. Trade Licence No. 1416022, Dubai Department of Economy and Tourism. Established October 2024. Serving homes and businesses from Dubai to Sharjah.</p>
         <p>&copy; <span id="year"></span> Bee Thrive Cleaning Services. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a class="fab-whatsapp" data-wa-link href="#contact" aria-label="Chat with Bee Thrive on WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.2 1.1 1.1-4.1-.3-.4a10 10 0 01-1.6-5.5c0-5.6 4.6-10.2 10.5-10.2S26.5 9.9 26.5 15.5 21.9 25.7 16 25.7zm5.8-7.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.4-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  <!-- Mobile quick-contact bar (shown at 767px and below) -->
+  <div class="action-bar" id="action-bar" role="region" aria-label="Quick contact">
+    <a class="btn btn-whatsapp" data-wa-link href="#contact">
+      <svg class="wa-ico" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+      WhatsApp quote
+    </a>
+    <a class="btn btn-ghost bar-call" data-call-primary href="#contact">
+      <svg class="ph-ico" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+      Call
+    </a>
+  </div>
+
+  <!-- Floating WhatsApp pill (shown at 768px and above) -->
+  <a class="fab-whatsapp" data-wa-link href="#contact" aria-label="WhatsApp quote. Chat with Bee Thrive on WhatsApp">
+    <svg aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>
+    <span>WhatsApp quote</span>
   </a>
 
   <!-- JSON-LD structured data -->
