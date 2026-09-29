@@ -1,0 +1,4 @@
+      <div class="orbit" aria-hidden="true">
+        <div class="o1"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="300" cy="300" rx="290" ry="170" stroke="rgba(252,252,252,0.30)" stroke-width="1.5" stroke-dasharray="2 9"/></svg></div>
+        <div class="o2"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="300" cy="300" rx="175" ry="285" stroke="rgba(252,252,252,0.30)" stroke-width="1.5" stroke-dasharray="2 9"/></svg></div>
+      </div>

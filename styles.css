@@ -256,8 +256,11 @@ img { display: block; max-width: 100%; height: auto; }
   .hero-copy > .hero-anim:nth-child(7) { animation-delay: .41s; }
   .bento-tiles.hero-anim { animation-delay: .26s; }
   .tile-1 > img { animation: heroImg 1.2s var(--ease-out) .26s both; }
+  /* LCP: the H1 and lead are painted straight away and only slide, never fade. */
+  .hero-copy > h1.hero-anim, .hero-copy > .hero-lead.hero-anim { opacity: 1; animation-name: heroRiseT; }
 }
 @keyframes heroRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes heroRiseT { from { transform: translateY(20px); } to { transform: none; } }
 @keyframes heroImg { from { transform: scale(1.06); } to { transform: scale(1); } }
 .hero.hero-shown .hero-anim { opacity: 1 !important; }
 .hero.hero-shown .tile-1 > img { transform: none !important; }
@@ -613,7 +616,7 @@ img { display: block; max-width: 100%; height: auto; }
 .info-ico { flex: 0 0 auto; width: 42px; height: 42px; background: rgba(244,163,0,.16); border-radius: 999px; display: grid; place-items: center; }
 .info-ico svg { width: 20px; height: 20px; fill: var(--honey); }
 .info-label { display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .14em; color: var(--on-dark-mute); margin-bottom: 3px; }
-.info-list a { display: block; color: var(--on-dark-strong); font-weight: 500; transition: color .2s; overflow-wrap: break-word; }
+.info-list a { display: flex; align-items: center; min-height: 44px; padding: 6px 0; color: var(--on-dark-strong); font-weight: 500; transition: color .2s; overflow-wrap: anywhere; }
 .info-list a:hover { color: var(--honey); }
 .info-social { display: flex; gap: 12px; margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); }
 .info-social a { width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,.08); display: grid; place-items: center; transition: background .3s var(--ease-out), transform .3s var(--ease-out); }
@@ -666,8 +669,9 @@ img { display: block; max-width: 100%; height: auto; }
 .footer-social svg { width: 20px; height: 20px; fill: #fff; }
 .footer-social a:hover svg { fill: var(--charcoal); }
 .footer-col h3 { color: #fff; font-family: var(--font-body); font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 16px; }
-.footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.footer-col a { overflow-wrap: break-word; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+.footer-col a { display: inline-block; padding: 8px 0; overflow-wrap: break-word; }
+.footer-note { color: var(--on-dark-mute); padding: 8px 0; }
 .footer-col a:hover { color: var(--honey); }
 .footer-plain li { color: var(--on-dark-mute); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); }
@@ -767,6 +771,11 @@ img { display: block; max-width: 100%; height: auto; }
   .section { padding: 60px 0; }
   .panel, .panel-ink, .trust-strip { width: calc(100% - 20px); border-radius: 26px; }
   .hero-inner { padding: 104px 10px 28px; }
+  .eyebrow-more { display: none; }
+  .hero h1 { font-size: 1.9rem; margin-bottom: 16px; }
+  .hero-lead { margin-bottom: 20px; }
+  .hero-trust { margin-top: 16px; gap: 6px 14px; }
+  .hero-trust li { font-size: .88rem; gap: 7px; }
   .bento-card { padding: 26px 20px; border-radius: 26px; }
   .bento-tiles { gap: 10px; }
   .bento-tile { border-width: 4px; border-radius: 22px; }
@@ -836,6 +845,7 @@ img { display: block; max-width: 100%; height: auto; }
   .label-long { display: none; }
   .label-short { display: inline; }
   .info-list a { font-size: .92rem; }
+  .cta-micro { font-size: .8rem; }
   .svc-card-top { flex-wrap: wrap; }
   .svc-tags { justify-content: flex-start; }
 }
@@ -853,4 +863,87 @@ img { display: block; max-width: 100%; height: auto; }
   .svc-more summary::after, .faq-icon, .faq-icon::after, .js .faq-a { transition: none; }
   .topbar, .action-bar, .fab-whatsapp, .main-nav, .header-inner, .header-inner::before { transition: none; }
   .fab-whatsapp.is-hidden { transform: none; }
+}
+
+/* ============================================================
+   Shared blocks used on the home page and every landing page
+   ============================================================ */
+
+/* ---------- Service card link to its landing page ---------- */
+.svc-page-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; font-weight: 600; font-size: .9rem; color: var(--ink);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey-deep); }
+.svc-page-link:hover { text-decoration-thickness: 2px; }
+
+/* ---------- Areas: link to the Sharjah page ---------- */
+.area-more { text-align: center; margin-top: 10px; }
+.area-more a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; font-weight: 600; color: var(--ink);
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--honey-deep); }
+.area-more a:hover { text-decoration-thickness: 2px; }
+
+/* ---------- Recommend Bee Thrive (share block) ---------- */
+.share-block { width: min(var(--panelw), calc(100% - 32px)); margin: 16px auto; border-radius: var(--radius-panel);
+  background: var(--panel); box-shadow: var(--shadow-sm); padding: 48px 0; }
+.share-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 48px; align-items: center; }
+.share-copy { min-width: 0; }
+.share-copy .kicker { margin-bottom: 10px; }
+.share-copy h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.12; margin-bottom: 12px; text-wrap: balance; }
+.share-copy p:not(.kicker) { color: var(--ink-soft); font-size: 1.02rem; max-width: 36em; }
+/* The three share buttons sit on one row on desktop; rows that wrap fill the width evenly. */
+.share-actions { display: flex; flex-wrap: wrap; gap: 10px; max-width: 690px; min-width: 0; }
+.share-actions .btn { min-height: 48px; flex: 1 1 auto; padding-left: 18px; padding-right: 18px; }
+.share-url { flex: 1 1 100%; width: 100%; height: 44px; min-width: 0; font-family: var(--font-body); font-size: .9rem; color: var(--ink-soft);
+  padding: 0 16px; border: 1.5px solid var(--field-border); border-radius: 14px; background: var(--cream);
+  text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.share-url:focus { outline: none; background: #fff; border-color: var(--honey-deep); box-shadow: 0 0 0 4px rgba(244,163,0,.22); }
+.share-url:focus-visible { outline: 3px solid var(--charcoal); outline-offset: 1px; }
+.share-status { flex: 1 1 100%; font-size: .9rem; font-weight: 600; color: var(--ink); }
+.share-status:empty { display: none; }
+.share-review { grid-column: 1 / -1; font-size: .9rem; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 8px; }
+.share-review a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--ink);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey-deep); }
+.share-review a:hover { text-decoration-thickness: 2px; }
+
+/* ---------- Company facts (at a glance) ---------- */
+.facts-list { margin: 0; background: var(--panel); border-radius: var(--radius-lg); padding: 8px 28px; box-shadow: var(--shadow-sm); }
+.facts-row { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.facts-row:last-child { border-bottom: 0; }
+.facts-row dt { font-weight: 700; color: var(--charcoal); }
+.facts-row dd { margin: 0; color: var(--ink-soft); overflow-wrap: anywhere; line-height: 1.8; }
+.facts-row dd a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey-deep);
+  padding: 6px 0; }
+
+/* ---------- Quote form: optional details + no-JS note ---------- */
+.form-more { border: 1.5px dashed var(--line-hover); border-radius: var(--radius); padding: 2px 16px; background: #fff; }
+.form-more[open] { padding-bottom: 16px; }
+.form-more > summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; list-style: none;
+  font-weight: 600; font-size: .95rem; color: var(--ink); border-radius: 8px; }
+.form-more > summary::-webkit-details-marker { display: none; }
+.form-more > summary::after { content: ""; width: 8px; height: 8px; border: solid var(--honey-deep); border-width: 0 2.5px 2.5px 0;
+  transform: translateY(-2px) rotate(45deg); transition: transform .3s var(--ease-out); }
+.form-more[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
+.form-more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 10px; }
+.form-actions .btn { white-space: normal; }
+html:not(.js) .booking-form .form-actions .btn { display: none; }
+.form-noscript { font-weight: 600; color: var(--ink); text-align: center; }
+
+/* ---------- Review beside the form ---------- */
+.contact-info-col .hero-quote { margin: 0; }
+
+@media (max-width: 1100px) {
+  .share-inner { grid-template-columns: minmax(0, 1fr); }
+  .share-actions { max-width: none; }
+}
+@media (max-width: 620px) {
+  .share-block { width: calc(100% - 20px); border-radius: 26px; padding: 32px 0; }
+  .share-actions .btn { flex: 1 1 100%; white-space: normal; }
+  .facts-list { padding: 4px 18px; border-radius: 22px; }
+  .facts-row { grid-template-columns: minmax(0, 1fr); }
+  .form-more-grid { grid-template-columns: minmax(0, 1fr); }
+  /* Shorter first screens on phones: two hero tiles, six client names. */
+  .bento-tiles .tile-3, .bento-tiles .tile-4 { display: none; }
+  .bento-tiles .tile-1 { grid-column: auto; aspect-ratio: 3 / 4; }
+  .trusted-list li:nth-child(n+7) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-more > summary::after { transition: none; }
 }

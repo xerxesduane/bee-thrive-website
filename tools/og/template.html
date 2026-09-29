@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Bee Thrive share card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@600;700&display=block" />
+<style>
+  :root {
+    --honeycomb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cg fill='none' stroke='%23F4A300' stroke-opacity='0.10' stroke-width='2'%3E%3Cpath d='M28 0L0 16v33l28 16 28-16V16L28 0z'/%3E%3Cpath d='M28 66L0 82v33l28 16 28-16V82L28 66z'/%3E%3C/g%3E%3C/svg%3E");
+    --hex: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { position: relative; background: #F6EAD2; font-family: "Plus Jakarta Sans", sans-serif; color: #1B1A17; -webkit-font-smoothing: antialiased; }
+  .comb { position: absolute; inset: 0; background-image: var(--honeycomb); background-size: 56px 100px; opacity: .5; }
+  .glow { position: absolute; left: 50%; top: 40%; width: 760px; height: 520px; transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(255,255,255,.75), rgba(255,255,255,0)); }
+  .tile { position: absolute; top: 60px; width: 290px; height: 510px; border-radius: 28px; border: 6px solid #fff; overflow: hidden;
+    box-shadow: 0 14px 40px rgba(27,26,23,.10); background: #FDF6E9; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tile.l { left: -40px; }
+  .tile.r { left: 950px; }
+  .col { position: absolute; left: 280px; top: 60px; width: 640px; height: 496px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0; }
+  .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+  .logo img { height: 64px; width: auto; }
+  .logo-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+  .logo-name { font-family: "Fraunces", serif; font-weight: 700; font-size: 30px; color: #1B1A17; letter-spacing: -0.01em; }
+  .logo-sub { font-weight: 700; font-size: 13px; letter-spacing: .16em; color: #9C5B00; margin-top: 6px; }
+  h1 { font-family: "Fraunces", serif; font-weight: 600; font-size: 58px; line-height: 1.05; letter-spacing: -0.02em; color: #1B1A17;
+    text-wrap: balance; max-width: 640px; }
+  .sub { margin-top: 18px; font-weight: 600; font-size: 30px; line-height: 1.2; color: #5B564C; white-space: nowrap; }
+  .chips { margin-top: 26px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 680px; }
+  .chip { height: 44px; display: inline-flex; align-items: center; gap: 10px; padding: 0 18px; border-radius: 999px;
+    background: #FFF3D6; border: 1px solid #F0D79A; font-weight: 600; font-size: 22px; color: #1B1A17; white-space: nowrap; }
+  .dot { display: inline-block; width: 12px; height: 13px; background: #F4A300; clip-path: var(--hex); flex: 0 0 auto; }
+  .band { position: absolute; left: 0; right: 0; top: 566px; height: 64px; background: #1B1A17; display: flex; align-items: center; justify-content: center; gap: 14px;
+    font-weight: 600; font-size: 24px; color: #F3EEE2; z-index: 2; white-space: pre; }
+  .band .dot { width: 14px; height: 15px; }
+</style>
+</head>
+<body>
+  <div class="comb"></div>
+  <div class="glow"></div>
+  <div class="tile l"><img id="pl" alt="" /></div>
+  <div class="tile r"><img id="pr" alt="" /></div>
+  <div class="col">
+    <div class="logo">
+      <img src="../../assets/logo-mark@400.png" alt="" />
+      <div class="logo-text"><span class="logo-name">Bee Thrive</span><span class="logo-sub">CLEANING SERVICES</span></div>
+    </div>
+    <h1 id="h"></h1>
+    <p class="sub" id="s"></p>
+    <div class="chips" id="c"></div>
+  </div>
+  <div class="band"><span class="dot"></span><span>beethrivecleaning.com  ·  Free quote on WhatsApp</span></div>
+<script>
+  const A = "../../assets/";
+  const STD = ["Trade Licence 1416022", "Free on-site supervisor", "24-hour re-clean promise"];
+  const LOC = ["Trade Licence 1416022", "Free on-site supervisor", "Dubai and Sharjah"];
+  const P = {
+    home: ["Dubai's best-supervised cleaning company", "A free on-site supervisor on every job", ["Trade Licence 1416022", "Dubai and Sharjah", "24-hour re-clean promise"], "work-windows-2", "work-office"],
+    deep: ["Deep cleaning in Dubai, checked by a supervisor", "Top to bottom, for apartments and villas", STD, "work-windows-1", "showreel-windows-poster"],
+    move: ["Move-in and move-out cleaning to handover standard", "Supervisor-checked, for apartments and villas", STD, "showreel-windows-poster", "work-office"],
+    office: ["Office cleaning, before or after your hours", "Hourly, monthly or yearly plans", STD, "work-office", "showreel-office-poster"],
+    holiday: ["Airbnb and holiday home turnovers, checked every stay", "Optional linen and towel service", STD, "showreel-windows-poster", "work-windows-2"],
+    post: ["Post-construction cleaning for villas and buildings", "Planned around your handover", STD, "work-windows-2", "work-windows-1"],
+    homeclean: ["Home cleaning and maid services, supervised", "One-off visits or regular plans", STD, "showreel-windows-poster", "work-windows-1"],
+    commercial: ["Commercial cleaning around your trading hours", "Shops, clinics, cafes, restaurants, warehouses", STD, "showreel-office-poster", "work-windows-2"],
+    sharjah: ["Cleaning services in Sharjah, supervised", "Homes, offices and holiday homes", LOC, "work-office", "work-windows-1"],
+    about: ["Licensed, supervised, established October 2024", "Bee Thrive Cleaning Services, Deira, Dubai", LOC, "work-windows-2", "work-windows-1"]
+  };
+  const key = new URLSearchParams(location.search).get("page") || "home";
+  const [h, sub, chips, l, r] = P[key];
+  // Hyphenated words never break across lines ("move-out" stays together).
+  const hEl = document.getElementById("h");
+  h.split(" ").forEach((w, i) => {
+    if (i) hEl.append(" ");
+    if (w.includes("-")) { const n = document.createElement("span"); n.style.whiteSpace = "nowrap"; n.textContent = w; hEl.append(n); }
+    else hEl.append(w);
+  });
+  document.getElementById("s").textContent = sub;
+  document.getElementById("pl").src = A + l + ".jpg";
+  document.getElementById("pr").src = A + r + ".jpg";
+  const c = document.getElementById("c");
+  chips.forEach((t) => { const e = document.createElement("span"); e.className = "chip"; e.innerHTML = '<span class="dot"></span>'; e.append(t); c.append(e); });
+  document.fonts.ready.then(() => {
+    // Keep the subline on one line inside the safe centre area (x 240 to 960).
+    const se = document.getElementById("s"); let fs = 30;
+    while (se.scrollWidth > 700 && fs > 22) { fs -= 1; se.style.fontSize = fs + "px"; }
+    document.body.dataset.ready = "1";
+  });
+</script>
+</body>
+</html>

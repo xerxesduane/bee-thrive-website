@@ -1,0 +1,6 @@
+process_images.py
+netlify.toml
+README.md
+screenshots/
+.claude/
+tools/

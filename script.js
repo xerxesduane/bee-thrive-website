@@ -1,7 +1,7 @@
 /* ============================================================
    Bee Thrive Cleaning Services
    All editable business details live in CONFIG below.
-   Change a value here and it updates every link on the page.
+   Change a value here and it updates every contact link on every page.
    ============================================================ */
 const CONFIG = {
   name: "Bee Thrive Cleaning Services",
@@ -15,7 +15,7 @@ const CONFIG = {
   whatsapp: "971568462872",            // digits only, used in wa.me links
   email: "sales.operations@beethrivecleaning.com",
   emailSecondary: "digitalthrivefm@gmail.com",
-  // Postal address (used in the JSON-LD; the visible address is in index.html).
+  // Postal address, for reference (the visible address and the JSON-LD are static HTML).
   addressStreet: "Office #201, Al Qasimi Building, Salahuddin Street, Deira",
   addressLocality: "Dubai",
 
@@ -23,16 +23,23 @@ const CONFIG = {
   instagram: "https://www.instagram.com/beethrivecleaning",
   facebook: "https://www.facebook.com/profile.php?id=61576092291203",
   maps: "https://maps.app.goo.gl/FFoZoKx1cviyXeTg7",
-  reviewLink: "",   // owner to supply the Google "write a review" link; falls back to CONFIG.maps
+  // Owner to supply the Google "write a review" link. Until then [data-review-link] opens the
+  // listing (CONFIG.maps) with honest static text, and [data-review-only] buttons stay hidden.
+  reviewLink: "",
 
   // Site
   domain: "https://www.beethrivecleaning.com",
-  // Default open days and hours, owner to confirm. They are only published in the
-  // JSON-LD once hoursConfirmed is set to true.
-  openDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday", "Sunday"],
-  opens: "08:00",
-  closes: "20:00",
+  // Opening hours are NOT published anywhere (HTML, JSON-LD or llms.txt) until the owner
+  // confirms them. Structured data is static HTML, so publishing hours later means adding
+  // them to the LocalBusiness JSON-LD in index.html by hand.
   hoursConfirmed: false,
+
+  // "Recommend Bee Thrive" share block (see README). A share is a message from a visitor
+  // to a friend, so by default it does not start with defaultMessage. Set
+  // sharePrefixDefault to true if the owner wants the referral line on shares too.
+  shareText: "Thought this might help: Bee Thrive Cleaning Services is a licensed Dubai cleaning company that sends a free supervisor to check every job.",
+  shareCampaign: "recommend",
+  sharePrefixDefault: false,
 
   defaultMessage: "I'm interested, referred by Xerxes"
 };
@@ -50,17 +57,55 @@ const mailLink = (addr, body) =>
   "mailto:" + addr + "?subject=" + encodeURIComponent(CONFIG.defaultMessage) +
   "&body=" + encodeURIComponent(body || CONFIG.defaultMessage);
 
+/* ---------- Lead attribution (no analytics, no personal data) ---------- */
+// Every lead message says which page and section it came from. A UTM source seen this
+// session (Instagram bio, Google Business Profile, a shared link) and the first page of the
+// visit are added when known. Kept in sessionStorage only; nothing leaves the browser
+// except inside the message the visitor chooses to send.
+let VIA = "", ENTRY = "";
+const clean = (v) => (v || "").toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 40);
+function viaLabel(v) {
+  if (v.m === "share") return "a link shared by a friend" + (v.s === "whatsapp" ? " on WhatsApp" : "");
+  if (v.s === "google" && v.m === "gbp") return "Google Business Profile";
+  if (v.s === "instagram") return v.m === "bio" ? "Instagram bio" : "Instagram";
+  if (v.s === "facebook") return "Facebook page";
+  return v.s + (v.m ? " / " + v.m : "");
+}
+function initAttribution() {
+  try {
+    const p = new URLSearchParams(location.search);
+    const s = clean(p.get("utm_source")), m = clean(p.get("utm_medium")), c = clean(p.get("utm_campaign"));
+    if (s) sessionStorage.setItem("bt_via", JSON.stringify({ s, m, c }));
+    if (!sessionStorage.getItem("bt_entry")) sessionStorage.setItem("bt_entry", location.pathname);
+    const v = JSON.parse(sessionStorage.getItem("bt_via") || "null");
+    VIA = v && v.s ? viaLabel(v) : "";
+    ENTRY = sessionStorage.getItem("bt_entry") || "";
+  } catch (e) { /* storage blocked: the extra lines are simply left out */ }
+}
+// "From: website, deep cleaning page (hero)", plus the optional Came via / First page lines.
+function contextLines(el) {
+  const page = (document.body && document.body.dataset.page) || "home page";
+  const holder = el && el.closest ? el.closest("[data-wa-from]") : null;
+  const lines = ["From: website, " + page + (holder ? " (" + holder.dataset.waFrom + ")" : "")];
+  if (VIA) lines.push("Came via: " + VIA);
+  if (ENTRY && ENTRY !== location.pathname) lines.push("First page: " + ENTRY);
+  return lines;
+}
+
 /* ---------- Wire up all data-driven links ---------- */
 // Takes a scope so it can be re-run on nodes injected later (finder banner, empty state).
 function bindLinks(scope = document) {
   const external = (el) => { el.target = "_blank"; el.rel = "noopener"; };
 
-  // Every WhatsApp trigger opens a prefilled chat. Service and area context
-  // lines are only ever added after the default message.
+  // Every WhatsApp trigger opens a prefilled chat. Service, area and source lines
+  // are only ever added after the default message. [data-share-wa] (a visitor sharing
+  // with a friend) is handled by initShare, never here.
   scope.querySelectorAll("[data-wa-link]").forEach((el) => {
-    const extra = [];
-    if (el.dataset.waService) extra.push("Service: " + el.dataset.waService);
-    if (el.dataset.waArea) extra.push("Area: " + el.dataset.waArea);
+    const extra = [
+      el.dataset.waService ? "Service: " + el.dataset.waService : "",
+      el.dataset.waArea ? "Area: " + el.dataset.waArea : "",
+      ...contextLines(el)
+    ];
     el.href = waLink(waMessage(extra));
     external(el);
   });
@@ -68,11 +113,17 @@ function bindLinks(scope = document) {
   // Click-to-call and email use native tel:/mailto: links.
   scope.querySelectorAll("[data-call-primary]").forEach((el) => (el.href = tel(CONFIG.phonePrimary)));
   scope.querySelectorAll("[data-call-secondary]").forEach((el) => (el.href = tel(CONFIG.phoneSecondary)));
-  scope.querySelectorAll("[data-email]").forEach((el) => (el.href = mailLink(CONFIG.email)));
-  scope.querySelectorAll("[data-email-secondary]").forEach((el) => (el.href = mailLink(CONFIG.emailSecondary)));
+  scope.querySelectorAll("[data-email]").forEach((el) => (el.href = mailLink(CONFIG.email, waMessage(contextLines(el)))));
+  scope.querySelectorAll("[data-email-secondary]").forEach((el) => (el.href = mailLink(CONFIG.emailSecondary, waMessage(contextLines(el)))));
 
   scope.querySelectorAll("[data-maps]").forEach((el) => { el.href = CONFIG.maps; external(el); });
-  scope.querySelectorAll("[data-review-link]").forEach((el) => { el.href = CONFIG.reviewLink || CONFIG.maps; external(el); });
+  scope.querySelectorAll("[data-review-link]").forEach((el) => {
+    el.href = CONFIG.reviewLink || CONFIG.maps;
+    external(el);
+    if (!CONFIG.reviewLink) return;
+    if (el.dataset.reviewLabel) el.textContent = el.dataset.reviewLabel;
+    if (el.hasAttribute("data-review-only")) el.hidden = false;
+  });
   scope.querySelectorAll("[data-instagram]").forEach((el) => { el.href = CONFIG.instagram; external(el); });
   scope.querySelectorAll("[data-facebook]").forEach((el) => { el.href = CONFIG.facebook; external(el); });
 
@@ -82,6 +133,57 @@ function bindLinks(scope = document) {
     const label = el.textContent.replace(/\s+/g, " ").trim();
     const what = el.dataset.emirate === "UAE" ? "a project or event" : "a clean here";
     el.setAttribute("aria-label", label + ", ask about " + what + " on WhatsApp");
+  });
+}
+
+/* ---------- Recommend Bee Thrive: WhatsApp share, copy link, native share ---------- */
+// Shared links carry utm_source=<channel>&utm_medium=share&utm_campaign=recommend, so a
+// friend who later gets in touch arrives with "Came via: a link shared by a friend".
+// The visible .share-url box shows the clean canonical URL until a clipboard write fails;
+// then it switches to the tracked copy link and selects it, so a manual copy keeps the UTMs.
+function shareUrl(source) {
+  const c = document.querySelector('link[rel="canonical"]');
+  const u = new URL(c ? c.href : location.origin + location.pathname);
+  u.search = ""; u.hash = "";
+  u.searchParams.set("utm_source", source);
+  u.searchParams.set("utm_medium", "share");
+  u.searchParams.set("utm_campaign", CONFIG.shareCampaign);
+  return u.toString();
+}
+function initShare() {
+  document.querySelectorAll("[data-share]").forEach((box) => {
+    let text = box.dataset.shareText || CONFIG.shareText;
+    if (CONFIG.sharePrefixDefault) text = CONFIG.defaultMessage + "\n" + text;
+    const status = box.querySelector(".share-status");
+    // Clear, then set, so screen readers announce a repeat of the same message.
+    const say = (t) => { if (!status) return; status.textContent = ""; setTimeout(() => { status.textContent = t; }, 60); };
+    const wa = box.querySelector("[data-share-wa]");
+    if (wa) {
+      wa.href = "https://wa.me/?text=" + encodeURIComponent(text + "\n" + shareUrl("whatsapp"));
+      wa.target = "_blank"; wa.rel = "noopener";
+    }
+    const field = box.querySelector(".share-url");
+    const copy = box.querySelector("[data-share-copy]");
+    if (copy) copy.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(shareUrl("copy"));
+        say("Link copied. Paste it into any chat.");
+      } catch (e) {
+        if (field) {
+          field.value = shareUrl("copy");
+          field.focus();
+          try { field.setSelectionRange(0, field.value.length); } catch (err) { field.select(); }
+        }
+        say("Copy the link from the box below.");
+      }
+    });
+    const nat = box.querySelector("[data-share-native]");
+    if (nat && typeof navigator.share === "function") {
+      nat.hidden = false;
+      nat.addEventListener("click", () => {
+        navigator.share({ title: document.title, text, url: shareUrl("native") }).catch(() => {});
+      });
+    }
   });
 }
 
@@ -296,7 +398,7 @@ function initServiceFinder() {
   const renderEmpty = (raw) => {
     empty.textContent = "";
     const p = document.createElement("p");
-    p.textContent = "Nothing matches \"" + raw + "\" yet. Tell us what you need and we will confirm straight away if we can help.";
+    p.textContent = "Nothing matches \"" + raw + "\" yet. Tell us what you need on WhatsApp and we will confirm whether we can help.";
     empty.append(p, waButton("Ask on WhatsApp"));
     bindLinks(empty);
   };
@@ -403,25 +505,35 @@ function initServiceFinder() {
   window.addEventListener("hashchange", openFromHash);
 }
 
-/* ---------- Quote form prefill from service cards and the quote block ---------- */
+/* ---------- Quote form prefill: service cards, the quote block, ?service= and ?area= ---------- */
 function initPrefill() {
   const select = document.getElementById("bf-service");
   const name = document.getElementById("bf-name");
-  if (!name) return;
-  // Let the native #contact jump happen, then focus Name once it has landed.
-  const focusName = () => setTimeout(() => name.focus({ preventScroll: true }), reduceMotion() ? 0 : 450);
+  const area = document.getElementById("bf-area");
+  const choose = (value) => {
+    if (!select || !value || ![...select.options].some((o) => o.value === value)) return false;
+    select.value = value;
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+    return true;
+  };
+  // Landing pages link to /?service=Deep%20cleaning#contact. Exact option text only;
+  // the native #contact jump does the scrolling and nothing is focused.
+  try { choose(new URLSearchParams(location.search).get("service")); } catch (e) { /* ignore */ }
+  // /?area=Sharjah#contact fills Area only when the value exactly matches an area chip.
+  try {
+    const want = (new URLSearchParams(location.search).get("area") || "").trim().slice(0, 40);
+    if (area && want && !area.value &&
+        [...document.querySelectorAll("[data-area]")].some((el) => el.dataset.area === want)) area.value = want;
+  } catch (e) { /* ignore */ }
 
+  if (!name) return;
+  // Let the native #contact jump happen, then focus a field once it has landed: Name when
+  // the service is already chosen, otherwise the Service select (the only required field).
+  const focusLater = (el) => setTimeout(() => el && el.focus({ preventScroll: true }), reduceMotion() ? 0 : 450);
   document.querySelectorAll("[data-prefill-service]").forEach((el) => {
-    el.addEventListener("click", () => {
-      const value = el.dataset.prefillService;
-      if (select && [...select.options].some((o) => o.value === value)) {
-        select.value = value;
-        select.dispatchEvent(new Event("change", { bubbles: true }));
-      }
-      focusName();
-    });
+    el.addEventListener("click", () => focusLater(choose(el.dataset.prefillService) ? name : select || name));
   });
-  document.querySelectorAll("[data-focus-form]").forEach((el) => el.addEventListener("click", focusName));
+  document.querySelectorAll("[data-focus-form]").forEach((el) => el.addEventListener("click", () => focusLater(select && !select.value ? select : name)));
 }
 
 /* ---------- Book by moment: prev/next on the mobile scroller ---------- */
@@ -471,20 +583,24 @@ function formatDate(v) {   // "2026-10-10" -> "Sat 10 Oct 2026"
   return [part({ weekday: "short" }), date.getDate(), part({ month: "short" }), date.getFullYear()].join(" ");
 }
 
-// skipEmpty leaves out Name/Phone/Service lines the visitor has not filled in (email).
-function bookingLines(form, skipEmpty) {
+// The fields the visitor filled in; empty ones are always skipped.
+function bookingFields(form) {
   const d = new FormData(form);
   const v = (k) => (d.get(k) || "").toString().trim();
-  const lines = [CONFIG.defaultMessage, ""];
-  if (!skipEmpty || v("name")) lines.push("Name: " + v("name"));
-  if (!skipEmpty || v("phone")) lines.push("Phone: " + normalisePhone(v("phone")));
-  if (!skipEmpty || v("service")) lines.push("Service: " + v("service"));
+  const lines = [];
+  if (v("name")) lines.push("Name: " + v("name"));
+  if (v("phone")) lines.push("Phone: " + normalisePhone(v("phone")));
+  if (v("service")) lines.push("Service: " + v("service"));
   if (v("area")) lines.push("Area: " + v("area"));
   if (v("property")) lines.push("Property type: " + v("property"));
   if (v("size")) lines.push("Property size: " + v("size"));
   if (v("date")) lines.push("Preferred date: " + formatDate(v("date")));
   if (v("message")) lines.push("Details: " + v("message"));
   return lines;
+}
+// Default message, a blank line, the filled fields, then the From / Came via / First page lines.
+function bookingLines(form) {
+  return [CONFIG.defaultMessage, ""].concat(bookingFields(form), contextLines(form));
 }
 
 function initForm() {
@@ -516,9 +632,10 @@ function initForm() {
   }
 
   // Inline validation: each field's error is linked with aria-describedby.
+  // Only Service is required. Phone is optional (WhatsApp already shows the number),
+  // but a typed number needs at least 9 digits. Name is never validated.
   const fields = {
-    name: { el: form.elements.name, ok: (v) => v.trim() !== "" },
-    phone: { el: form.elements.phone, ok: (v) => v.replace(/\D/g, "").length >= 9 },
+    phone: { el: form.elements.phone, ok: (v) => v.trim() === "" || v.replace(/\D/g, "").length >= 9 },
     service: { el: form.elements.service, ok: (v) => v !== "" }
   };
   const describe = (el, id, on) => {
@@ -532,7 +649,7 @@ function initForm() {
     const err = document.getElementById("bf-" + key + "-err");
     if (on) el.setAttribute("aria-invalid", "true"); else el.removeAttribute("aria-invalid");
     if (err) { err.hidden = !on; describe(el, err.id, on); }
-    if (key === "phone") el.setCustomValidity(on ? "Please add a phone number we can reach you on." : "");
+    if (key === "phone") el.setCustomValidity(on ? "Please check the phone number, or leave it blank." : "");
   };
   Object.keys(fields).forEach((key) => {
     const { el } = fields[key];
@@ -558,7 +675,9 @@ function initForm() {
     e.preventDefault();
     if (!validate()) return;
     const url = waLink(bookingLines(form).join("\n"));
-    window.open(url, "_blank", "noopener");
+    // Instagram and Facebook in-app browsers can block window.open.
+    if (/Instagram|FBAN|FBAV/i.test(navigator.userAgent)) location.href = url;
+    else window.open(url, "_blank", "noopener");
     if (status) {
       // Built with DOM methods so no user text is ever parsed as HTML.
       const a = document.createElement("a");
@@ -570,12 +689,12 @@ function initForm() {
   });
 
   // "Prefer email?" never blocks an email lead. With an empty form the link's own
-  // mailto (referral subject and body from bindLinks) opens as is; otherwise
-  // whatever the visitor has filled in is added below the referral line.
+  // mailto (referral subject, body and source line from bindLinks) opens as is;
+  // otherwise whatever the visitor has filled in is added below the referral line.
   form.querySelectorAll("[data-form-email]").forEach((el) => {
     el.addEventListener("click", (e) => {
-      const lines = bookingLines(form, true);
-      if (lines.length <= 2) return;
+      if (!bookingFields(form).length) return;
+      const lines = bookingLines(form);
       e.preventDefault();
       const addr = el.hasAttribute("data-email-secondary") ? CONFIG.emailSecondary : CONFIG.email;
       location.href = mailLink(addr, lines.join("\r\n"));
@@ -641,6 +760,10 @@ function initHeroReel() {
 }
 
 /* ---------- Mobile action bar + desktop WhatsApp pill ---------- */
+// The phone bar and the desktop pill both stay hidden while the hero CTAs ([data-bar-trigger],
+// else .hero-cta) are on screen, so the first viewport never shows the same action twice. Both
+// hide over #contact and every [data-bar-hide] (the final CTA). The pill also hides over the
+// footer; the bar over the share block, while the menu is open or while the form has focus.
 function initActionBar() {
   const bar = document.getElementById("action-bar");
   const fab = document.querySelector(".fab-whatsapp");
@@ -649,12 +772,18 @@ function initActionBar() {
   const form = document.getElementById("booking-form");
   if ((!bar && !fab) || !("IntersectionObserver" in window)) return;
 
+  const trigger = document.querySelector("[data-bar-trigger]") || document.querySelector(".hero-cta");
+  const hiders = [contact, ...document.querySelectorAll("[data-bar-hide]")].filter(Boolean);
+  // A friend-share button next to the bar's "WhatsApp quote" is easy to mix up on a phone.
+  const barHiders = [...document.querySelectorAll("[data-share]")];
   const inView = new Set();
+  let triggerVisible = Boolean(trigger);   // start hidden when there is a trigger, so no flash
   let formFocused = false;
   const update = () => {
-    const contactVisible = contact && inView.has(contact);
-    if (bar) bar.classList.toggle("is-hidden", Boolean(contactVisible || formFocused || document.body.classList.contains("nav-open")));
-    if (fab) fab.classList.toggle("is-hidden", Boolean(contactVisible || (footer && inView.has(footer))));
+    const overHider = hiders.some((h) => inView.has(h));
+    const overShare = barHiders.some((h) => inView.has(h));
+    if (bar) bar.classList.toggle("is-hidden", Boolean(triggerVisible || overHider || overShare || formFocused || document.body.classList.contains("nav-open")));
+    if (fab) fab.classList.toggle("is-hidden", Boolean(triggerVisible || overHider || (footer && inView.has(footer))));
   };
   refreshActionBar = update;
 
@@ -662,11 +791,15 @@ function initActionBar() {
     entries.forEach((e) => { if (e.isIntersecting) inView.add(e.target); else inView.delete(e.target); });
     update();
   }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
-  [contact, footer].forEach((t) => t && io.observe(t));
+  hiders.concat(barHiders, footer ? [footer] : []).forEach((t) => io.observe(t));
+
+  if (trigger) {
+    new IntersectionObserver(([e]) => { triggerVisible = e.isIntersecting; update(); }, { threshold: 0 }).observe(trigger);
+  }
 
   // Past the hero the desktop pill shrinks to an icon so it covers less content;
   // CSS brings the label back on hover and keyboard focus.
-  const hero = document.querySelector(".hero");
+  const hero = document.querySelector(".hero, .page-hero");
   if (fab && hero) {
     new IntersectionObserver(([e]) => fab.classList.toggle("is-compact", !e.isIntersecting), { threshold: 0 }).observe(hero);
   }
@@ -782,159 +915,18 @@ function initScrollSpy() {
   document.querySelectorAll("main > section").forEach((sec) => io.observe(sec));
 }
 
-/* ---------- JSON-LD structured data ---------- */
-// Services listed in structured data for topical coverage (no fixed price).
-const SERVICE_TYPES = [
-  "Home cleaning", "Office and commercial cleaning", "Deep cleaning",
-  "Move-in and move-out cleaning", "Post-construction turnover for villas and commercial buildings",
-  "Airbnb and holiday home cleaning", "Carpet cleaning", "Laundry and ironing",
-  "Window and glass cleaning", "Restaurant and cafeteria deep cleaning", "Shops and retail cleaning",
-  "Holiday home turnover cleaning", "Packing and unpacking"
-];
-
-// Offer catalog groups, keyed by the first token of each card's data-cat.
-const CATALOG_GROUPS = {
-  home: "Home cleaning",
-  business: "Business cleaning",
-  holiday: "Holiday home cleaning",
-  moves: "Moves, handovers and support"
-};
-
-function injectJsonLd() {
-  const el = document.getElementById("ld-json");
-  if (!el) return;
-  const id = CONFIG.domain + "/#business";
-
-  // areaServed is generated from the #areas chips so it never drifts from the page.
-  const places = [...document.querySelectorAll(".area-chip[data-area]")];
-  let areaServed = [
-    { "@type": "City", "name": "Dubai" },
-    { "@type": "City", "name": "Sharjah" },
-    { "@type": "Country", "name": "United Arab Emirates" }
-  ];
-  if (places.length) {
-    areaServed = [{ "@type": "City", "name": "Dubai" }, { "@type": "City", "name": "Sharjah" }];
-    places.forEach((p) => {
-      const { area, emirate } = p.dataset;
-      if (emirate === "UAE" || area === emirate) return;
-      areaServed.push({ "@type": "Place", "name": area + ", " + emirate });
-    });
-    areaServed.push({ "@type": "Country", "name": "United Arab Emirates" });
-  }
-
-  // hasOfferCatalog is generated from the service cards. No price of any kind.
-  const groups = {};
-  document.querySelectorAll(".svc-card[data-service]").forEach((card) => {
-    const key = (card.dataset.cat || "").split(" ")[0];
-    if (!CATALOG_GROUPS[key]) return;
-    (groups[key] = groups[key] || []).push({
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": card.dataset.service,
-        "description": (card.querySelector(":scope > p")?.textContent || "").trim(),
-        "areaServed": "Dubai and Sharjah, UAE"
-      }
-    });
-  });
-  const catalog = Object.keys(CATALOG_GROUPS).filter((k) => groups[k]).map((k) => ({
-    "@type": "OfferCatalog", "name": CATALOG_GROUPS[k], "itemListElement": groups[k]
-  }));
-
-  const business = {
-    "@type": "LocalBusiness",
-    "additionalType": "https://www.productontology.org/id/Cleaner",
-    "@id": id,
-    "name": CONFIG.name,
-    "description": "Licensed cleaning company in Dubai and Sharjah with free on-site supervision on every job. Home, deep, office, move-in and move-out, holiday home turnover and post-construction cleaning.",
-    "image": CONFIG.domain + "/assets/og-cover.jpg",
-    "logo": CONFIG.domain + "/assets/icon-512.png",
-    "url": CONFIG.domain + "/",
-    "telephone": CONFIG.phonePrimary,
-    "email": CONFIG.email,
-    "knowsAbout": [
-      "House cleaning", "Office cleaning", "Deep cleaning", "Move-in and move-out cleaning",
-      "Post-construction cleaning", "Villa cleaning", "Airbnb and holiday home cleaning",
-      "Carpet cleaning", "Commercial cleaning"
-    ],
-    "paymentAccepted": "Cash, Bank transfer",
-    "foundingDate": CONFIG.established,
-    "parentOrganization": { "@type": "Organization", "name": CONFIG.legalEntity },
-    "identifier": { "@type": "PropertyValue", "name": "Dubai DET Trade Licence", "value": CONFIG.licence },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": CONFIG.addressStreet,
-      "addressLocality": CONFIG.addressLocality,
-      "addressRegion": "Dubai",
-      "addressCountry": "AE"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": 25.2697, "longitude": 55.3095 },
-    "hasMap": CONFIG.maps,
-    "areaServed": areaServed,
-    "makesOffer": SERVICE_TYPES.map((s) => ({
-      "@type": "Offer",
-      "itemOffered": { "@type": "Service", "name": s, "areaServed": "Dubai and Sharjah, UAE" }
-    })),
-    "sameAs": [CONFIG.instagram, CONFIG.facebook],
-    "slogan": "Cleaning beyond expectations, delivered to your doorstep."
-    // Note: on-page Google reviews are shown to visitors but intentionally not
-    // emitted as Review/aggregateRating markup. Google's review-snippet policy
-    // disallows self-serving ratings sourced from third-party sites.
-  };
-  // Opening hours are only published once the owner has confirmed them.
-  if (CONFIG.hoursConfirmed) {
-    business.openingHoursSpecification = [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": CONFIG.openDays.map((d) => "https://schema.org/" + d),
-      "opens": CONFIG.opens,
-      "closes": CONFIG.closes
-    }];
-  }
-  if (catalog.length) {
-    business.hasOfferCatalog = { "@type": "OfferCatalog", "name": "Bee Thrive cleaning services", "itemListElement": catalog };
-  }
-
-  // FAQPage generated from the rendered FAQ so the two never drift apart.
-  const faqEntities = [...document.querySelectorAll(".faq-item")].map((item) => {
-    const q = item.querySelector(".faq-q");
-    const a = item.querySelector(".faq-a");
-    const question = q ? q.textContent.trim() : "";
-    const answer = a ? a.textContent.trim() : "";
-    return {
-      "@type": "Question",
-      "name": question,
-      "acceptedAnswer": { "@type": "Answer", "text": answer }
-    };
-  }).filter((e) => e.name && e.acceptedAnswer.text);
-
-  const graph = { "@context": "https://schema.org", "@graph": [business] };
-  graph["@graph"].push({
-    "@type": "VideoObject",
-    "@id": CONFIG.domain + "/#showreel-video",
-    "name": "Bee Thrive Cleaning Services showreel",
-    "description": "A short Bee Thrive services reel showing supervised cleaning work for homes, offices, holiday homes, and projects across Dubai and Sharjah.",
-    "thumbnailUrl": CONFIG.domain + "/assets/showreel-main-poster.jpg",
-    "contentUrl": CONFIG.domain + "/assets/showreel-main.mp4",
-    "uploadDate": "2026-07-10T00:00:00+04:00",
-    "duration": "PT30S",
-    "publisher": {
-      "@type": "Organization",
-      "name": CONFIG.name,
-      "logo": {
-        "@type": "ImageObject",
-        "url": CONFIG.domain + "/assets/icon-512.png"
-      }
-    }
-  });
-  if (faqEntities.length) {
-    graph["@graph"].push({ "@type": "FAQPage", "@id": CONFIG.domain + "/#faq", "mainEntity": faqEntities });
-  }
-  el.textContent = JSON.stringify(graph);
-}
+/* ---------- Structured data ---------- */
+// JSON-LD is written by hand into each page's static HTML, because crawlers and most AI
+// bots do not run JavaScript. Nothing in this file writes structured data. When you edit a
+// FAQ answer or a business fact, edit the matching JSON-LD text on that page too.
 
 /* ---------- Init ---------- */
+// Every init returns early when its elements are missing, so this runs cleanly on the
+// landing pages, /about and the 404 page as well as the home page.
 document.addEventListener("DOMContentLoaded", () => {
+  initAttribution();
   bindLinks();
+  initShare();
   initNav();
   initHeaderScroll();
   initServiceFinder();
@@ -948,7 +940,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initCountUp();
   initScrollSpy();
-  injectJsonLd();
   const yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
 });

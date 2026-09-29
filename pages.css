@@ -1,0 +1,147 @@
+/* ============================================================
+   Bee Thrive landing pages (service pages, Sharjah, About, 404)
+   Loaded after styles.css. Tokens only, no new colours.
+   ============================================================ */
+
+/* ---------- Page hero ---------- */
+.page-hero { padding: 124px 0 24px; }                        /* clears the fixed header */
+.page-hero-inner { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,.75fr); gap: 16px; align-items: stretch; }
+.page-hero-copy { background: var(--panel); border-radius: var(--radius-panel); padding: 40px; box-shadow: var(--shadow-sm); min-width: 0; }
+.page-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.06; margin-bottom: 18px; text-wrap: balance; overflow-wrap: break-word; }
+.page-hero .eyebrow { margin-bottom: 14px; }
+.page-lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 38em; margin-bottom: 24px; }
+.page-lead a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey-deep); }
+.page-hero-photo { margin: 0; position: relative; border-radius: var(--radius-lg); border: 6px solid #fff; box-shadow: var(--shadow-md); overflow: hidden; min-height: 320px; }
+.page-hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.page-updated { margin-top: 18px; font-size: .82rem; color: var(--ink-soft); }
+.page-hero-solo .page-hero-inner { grid-template-columns: minmax(0, 1fr); max-width: 860px; }
+.page-hero-solo .page-hero-copy { text-align: center; }
+.page-hero-solo .page-lead { margin-left: auto; margin-right: auto; }
+.page-hero-solo .hero-cta { justify-content: center; }
+/* Wide screens: a wider copy column keeps both hero buttons on one row. */
+@media (min-width: 1200px) {
+  .page-hero-inner { grid-template-columns: minmax(0,1.45fr) minmax(0,.55fr); }
+}
+
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs ol { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px; font-size: .85rem; color: var(--ink-soft); }
+.breadcrumbs li { display: flex; align-items: center; }
+.breadcrumbs li + li::before { content: "›"; margin-right: 6px; color: var(--accent-text); }
+.breadcrumbs a { text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 10px 0; }
+
+/* ---------- Body copy ---------- */
+.prose { max-width: 760px; margin-left: auto; margin-right: auto; }
+.prose h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 14px; text-wrap: balance; }
+.prose h3 { font-size: 1.3rem; margin: 28px 0 10px; }
+.prose p { color: var(--ink-soft); margin: 0 0 14px; font-size: 1.04rem; }
+.prose a:not(.btn):not(.related-card) { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey-deep); }
+.prose > * + h2 { margin-top: 48px; }
+/* Several question blocks can share one section shell. */
+.prose + .prose, .page-wide + .prose, .prose + .page-wide { margin-top: 56px; }
+.prose .section-head-left { margin-bottom: 24px; max-width: none; }
+.prose .section-head-left h2 { margin-bottom: 0; }
+.prose .kicker { font-size: .76rem; color: var(--accent-text); margin: 0 0 14px; }
+.prose .section-intro { margin: 10px 0 0; font-size: 1rem; }
+.prose .tick-list { margin: 6px 0 18px; gap: 10px; }
+.tick-list-lg li { font-size: 1rem; }
+.tick-list-lg li::before { top: 4px; }
+.tick-list-lg li::after { top: 7px; }
+.prose .prep-list { margin: 8px 0 18px; }
+.prose .prep-list li { font-size: 1rem; }
+.prose .client-grid { margin: 14px 0 6px; }
+.prose .standard-loop { margin-top: 8px; }
+.prose .related-grid { margin: 18px 0 22px; }
+.page-sub { margin-top: 8px; }
+.page-sub + .page-sub { margin-top: 20px; }
+.page-sub h3 { margin-top: 20px; }
+.page-btn { margin: 4px 0 0; }
+.page-btn .btn { white-space: normal; max-width: 100%; text-align: left; }
+.facts-list a { overflow-wrap: anywhere; }
+.prose .page-btn { margin-bottom: 0; }
+.page-note { font-size: .9rem; color: var(--ink-soft); margin-top: 10px; }
+.prose p.page-note { font-size: .9rem; }
+.page-sub + .page-note { margin-top: 24px; }
+.page-note a { display: inline-block; padding: 10px 0; color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey-deep); }
+
+/* Wide blocks (numbered steps) sit outside the 760px reading column. */
+.page-wide .section-head { margin-bottom: 40px; }
+.page-wide .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+
+/* Tables inside copy (comparisons, plans; never prices) */
+.page-table { margin: 18px 0 8px; box-shadow: var(--shadow-sm); }
+.price-table tbody th[scope="row"] { text-align: left; padding: 16px 22px; border-bottom: 1px solid var(--line); font-weight: 600; color: var(--charcoal); vertical-align: top; }
+.price-table tbody tr:last-child th { border-bottom: 0; }
+.price-table td { color: var(--ink-soft); }
+.price-table td:first-child { color: var(--charcoal); }
+.price-table tbody th[scope="row"] + td { color: var(--ink-soft); font-weight: 400; }
+
+/* Reviews */
+.page-review-wrap { margin-top: 48px; max-width: 760px; margin-left: auto; margin-right: auto; }
+.page-review { margin: 0; }
+.page-reviews { display: grid; gap: 14px; margin: 8px 0 0; }
+
+/* Cards (home cleaning services) */
+.page-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px,100%),1fr)); gap: 14px; margin: 18px 0; }
+.page-card { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.page-card h3 { font-size: 1.15rem; margin: 0; }
+.prose .page-card p { font-size: .96rem; margin: 0 0 6px; }
+.page-card .btn { margin-top: auto; align-self: flex-start; white-space: normal; }
+
+/* About: contact list */
+.page-address { display: inline-block; padding: 8px 0; }
+.page-contact-list { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 2px; }
+.page-contact-list a { display: inline-block; padding: 10px 0; overflow-wrap: anywhere; }
+
+/* ---------- Related services ---------- */
+.related-title { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 20px; }
+.related-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px,100%),1fr)); gap: 14px; }
+.related-card { display: flex; flex-direction: column; gap: 6px; min-height: 44px; height: 100%; background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; transition: border-color .3s var(--ease-out), transform .3s var(--ease-out); }
+.related-card:hover { border-color: var(--honey-deep); transform: translateY(-2px); }
+.related-card:focus-visible { outline: 3px solid var(--charcoal); outline-offset: 2px; }
+.related-card strong { font-family: var(--font-display); font-size: 1.1rem; color: var(--charcoal); }
+.related-card span { color: var(--ink-soft); font-size: .92rem; }
+.page-home-link { margin-top: 22px; text-align: center; }
+.page-home-link a { display: inline-block; padding: 10px 2px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--honey-deep); }
+
+/* Two canvas sections in a row read as one band. */
+.on-canvas + .on-canvas { padding-top: 0; }
+
+@media (max-width: 940px) {
+  .page-hero-inner { grid-template-columns: minmax(0,1fr); }
+  .page-hero-photo { min-height: 0; aspect-ratio: 4 / 3; }
+}
+@media (max-width: 620px) {
+  .page-hero { padding: 104px 0 16px; }
+  .page-hero .container { padding: 0 10px; }
+  .page-hero-copy { padding: 26px 20px; border-radius: 26px; }
+  .page-hero h1 { font-size: 1.85rem; }
+  .page-lead { font-size: 1rem; margin-bottom: 20px; }
+  .page-hero .hero-trust { margin-top: 16px; gap: 6px 14px; }
+  .page-hero .hero-trust li { font-size: .88rem; gap: 7px; }
+  /* Phones: the decision and the proof come straight after the H1. The breadcrumb and H1 already
+     say what the eyebrow says, and the lead (word for word the same text) follows the proof. */
+  .page-hero .eyebrow { display: none; }
+  .page-hero-copy { display: flex; flex-direction: column; }
+  .page-hero-copy > .hero-cta, .page-hero-copy > .cta-micro, .page-hero-copy > .hero-trust { order: 1; }
+  .page-hero-copy > .page-lead { order: 2; margin: 22px 0 0; }
+  .page-hero-copy > .page-updated { order: 3; }
+  .page-hero-solo .page-hero-copy > .page-lead { margin-bottom: 0; }
+  /* Service CTAs use their short label so each button stays on one line. */
+  .page-hero .label-long, .page-wide .label-long { display: none; }
+  .page-hero .label-short, .page-wide .label-short { display: inline; }
+  .prose + .prose, .page-wide + .prose, .prose + .page-wide { margin-top: 44px; }
+  .page-review-wrap { margin-top: 36px; }
+  /* Stacked comparison table: the row label becomes a heading. */
+  .price-table tbody th[scope="row"] { display: block; width: 100%; border: 0; padding: 10px 18px 2px; font-family: var(--font-display); font-size: 1.12rem; }
+  .price-table td:first-child { color: var(--charcoal); }
+  .price-table tbody th[scope="row"] + td { font-size: 1rem; font-weight: 400; }
+  .page-table .price-table td { flex-direction: column; gap: 2px; }
+}
+@media (max-width: 400px) {
+  /* Service CTAs stay on one 50px line down to 360px. */
+  .page-hero .hero-cta .btn, .page-wide .cta-buttons .btn { font-size: .94rem; padding-left: 14px; padding-right: 14px; }
+}
+@media (max-width: 370px) {
+  .page-hero .cta-micro { font-size: .75rem; }
+}
+@media (prefers-reduced-motion: reduce) { .related-card:hover { transform: none; } }
